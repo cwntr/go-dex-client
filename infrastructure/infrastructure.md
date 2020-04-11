@@ -225,6 +225,7 @@ Connect to the XSN Lightning Hubs:
 
 [wait a few seconds]
 Check whether it's connected properly to the network by outputting the network graph.
+
 `lnxsn describegraph`
 
 ## 12.) Fund your XSN Node
