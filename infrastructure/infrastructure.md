@@ -10,7 +10,7 @@ Your VM should have at least:
 to get the components (fully synchronized BTC, LTC and XSN chains and 3x Lightning Network Daemon) running.
 
 ### Components Overview
-![alt text](infrastructure/components.png)
+![alt text](components.png)
 
 
 So log on to your Ubuntu VM and get started with the following steps. It describes the installation for a user named "ubuntu".
