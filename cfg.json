@@ -1,0 +1,44 @@
+{
+  "botCfg": {
+      "host":"localhost",
+      "port":9999,
+      "lnCLIPath": "/home/ln_node/lncli",
+      "jobInterval": "2s",
+      "orderLimit": 1000,
+      "logLevel": "debug"
+  },
+  "lssdConfig": {
+    "host": "",
+    "port": 50051,
+    "timeout": "100s"
+  },
+  "xsnLNDConfig": {
+    "lndDir": "/root/.lnd_xsn/",
+    "certPath":"certs/xsn.cert",
+    "host": "localhost",
+    "port": 10003,
+    "hubPeers": [
+      {"remoteKey": "0396ca2f7cec03d3d179464acd57b4e6eabebb5f201705fa56e83363e3ccc622bb", "address": "134.209.164.91:11384"},
+      {"remoteKey": "03bc3a97ffad197796fc2ea99fc63131b2fd6158992f174860c696af9f215b5cf1", "address": "134.209.164.91:21384"}
+    ]
+  },
+  "ltcLNDConfig": {
+    "lndDir":"/root/.lnd_ltc/",
+    "certPath":"certs/ltc.cert",
+    "host": "localhost",
+    "port": 10001,
+    "hubPeers": [
+      {"remoteKey": "0375e7d882b442785aa697d57c3ed3aef523eb2743193389bd205f9ae0c609e6f3", "address": "134.209.164.91:11002"},
+      {"remoteKey": "0211eeda84950d7078aa62383c7b91def5cf6c5bb52d209a324cda0482dbfbe4d2", "address": "134.209.164.91:21002"}
+    ]
+  },
+  "btcLNDConfig": {
+    "certPath":"certs/lnd_btc.cert",
+    "host": "localhost",
+    "port": 10009,
+    "hubPeers" : [
+      {"remoteKey": "03f1b0a270f5e57292732c3b44b2582324b144df6b2981a3ba46b6a5bc435479bc", "address":"134.209.164.91:8000"},
+      {"remoteKey": "023a0c53433904339b7bdbd725151aaed10922e2f9aca5ec979ed75a370615f24e", "address":"134.209.164.91:9000"}
+    ]
+  }
+}
