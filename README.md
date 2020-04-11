@@ -1,8 +1,7 @@
 # go-dex-trading-bot
 
 [![License](http://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/miguelmota/cwntr/go-crypto-tools/LICENSE.md)
-[![Build Status](https://travis-ci.org/cwntr/go-dex-client.svg?branch=master)](https://travis-ci.org/cwntr/go-dex-client)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9089c88385174746935bd0bc90ed3272)](https://www.codacy.com/manual/cwntr/go-dex-trading-bot?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cwntr/go-dex-trading-bot&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1ab794872bef48d59e09f8e3160d6326)](https://www.codacy.com/manual/cwntr/go-dex-client?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cwntr/go-dex-client&amp;utm_campaign=Badge_Grade)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing)
 
 A trading bot for Stakenet's XSN DexAPI (Decentralized Exchange) written in golang.
