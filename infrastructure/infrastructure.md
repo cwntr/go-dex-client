@@ -376,11 +376,7 @@ Check if it's working:
 ## 16.) Bot installation
 `cd ~/bot`
 
-`wget https://github.com/cwntr/go-dex-trading-bot/releases/download/V1.3/bot-v1.5.zip`
-
-`unzip bot-v1.5.zip`
-
-`rm bot-v1.5.zip`
+`wget https://github.com/cwntr/go-dex-client/releases/download/v1.0.0/bot`
 
 `chmod +x bot`
 
