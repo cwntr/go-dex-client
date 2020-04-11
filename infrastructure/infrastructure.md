@@ -202,18 +202,23 @@ which should give you once again the "blocks" and "headers" information
   - once the file is saved, simple execute `bash` in the command line and its updated
 
 Starting the lnd_xsn with:
+
 `sudo systemctl start lnd_xsn`
 
 Check if it's working (should be active state):
+
 `sudo systemctl status lnd_xsn`
 
 If its not working yet, you can execute the following command to get further details from the logs:
+
 `sudo journalctl -f -u lnd_xsn`
 
 Once it works, you can check your current LND balance with `walletbalance` command:
+
 `lnxsn walletbalance`
 
 Connect to the XSN Lightning Hubs:
+
 `lnxsn connect 0396ca2f7cec03d3d179464acd57b4e6eabebb5f201705fa56e83363e3ccc622bb@134.209.164.91:11384`
 
 `lnxsn connect 03bc3a97ffad197796fc2ea99fc63131b2fd6158992f174860c696af9f215b5cf1@134.209.164.91:21384`
@@ -232,6 +237,7 @@ This will give you an address you can fund on-chain. Beware: This is address is 
 ## 13.) Open a channel to a XSN Hub
 
 In this case you'll open a channel to the XSN Hub having a local balance of 5 XSN. You need to wait until the Hub opens back a channel to you, to perform actual swaps.
+
 `lnxsn openchannel --local_amt=500000000 --node_key=0396ca2f7cec03d3d179464acd57b4e6eabebb5f201705fa56e83363e3ccc622bb`
 
 [wait ~5m]
@@ -281,9 +287,11 @@ txindex=1
 ```
 
 Funding your LTC wallet: by generating a new address and sending LTC to it.
+
 `lnltc newaddress p2wkh`
 
 ##### Connect to LTC Hub Peers:
+
 `lnltc connect 0375e7d882b442785aa697d57c3ed3aef523eb2743193389bd205f9ae0c609e6f3@134.209.164.91:11002`
 
 `lnltc connect 0211eeda84950d7078aa62383c7b91def5cf6c5bb52d209a324cda0482dbfbe4d2@134.209.164.91:21002`
@@ -291,6 +299,7 @@ Funding your LTC wallet: by generating a new address and sending LTC to it.
 
 ##### Open Channel:
 This would open a channel with a local amount of 0.015 LTC to the LTC HUB
+
 `lnltc openchannel --local_amt=1500000 --node_key=0375e7d882b442785aa697d57c3ed3aef523eb2743193389bd205f9ae0c609e6f3`
 
 ## 15.) BTC: same steps as 9.) -13.) with different configs:
@@ -333,18 +342,22 @@ txindex=1
 
 
 Fund your BTC LND balance: by generating a new address and sending BTC to it.
+
 `lnbtc newaddress p2wkh`
 
 ##### Connect to BTC Hub Peers:
+
 `lnbtc connect 03757b80302c8dfe38a127c252700ec3052e5168a7ec6ba183cdab2ac7adad3910@134.209.164.91:11000`
 
 `lnbtc connect 02bfe54c7b2ce6f737f0074062a2f2aaf855f81741474c05fd4836a33595960e18@134.209.164.91:21000`
 
 ##### Open Channel:
 This will open a channel to the BTC hub with a local amount of 0.00092 BTC
+
 `lnbtc openchannel --local_amt=92000 --node_key=03757b80302c8dfe38a127c252700ec3052e5168a7ec6ba183cdab2ac7adad3910`
 
 ## 15.) LSSD installation
+
 `cd ~/lssd`
 
 `wget https://github.com/X9Developers/DexAPI/releases/download/latest/lssd.zip`
@@ -356,6 +369,7 @@ This will open a channel to the BTC hub with a local amount of 0.00092 BTC
 `sudo systemctl start lssd`
 
 Check if it's working:
+
 `sudo systemctl status lssd`
 
 
@@ -437,6 +451,7 @@ Check if it's working:
 ## 17.) Start the bot
 
 ##### Start the mandatory services that the bot can operate, if not done yet:
+
 1. `sudo systemctl start lnd_xsn`
 
 2. `sudo systemctl start lnd_ltc`
