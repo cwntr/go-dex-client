@@ -1,0 +1,12 @@
+[Unit]
+Description=lnd_ltc service
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=1
+User=ubuntu
+ExecStart=/usr/bin/env /home/ubuntu/lnds/lnd_ltc --lnddir=/home/ubuntu/.lnd_ltc --no-macaroons
+WorkingDirectory=/home/ubuntu/.lnd_ltc
+[Install]
+WantedBy=multi-user.target

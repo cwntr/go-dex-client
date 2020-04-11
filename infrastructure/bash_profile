@@ -1,0 +1,19 @@
+function lnltc() {
+  ~/lnds/lncli --lnddir=~/.lnd_ltc -rpcserver=localhost:10001 --no-macaroons $1 $2 $3 $4
+}
+
+function lnxsn() {
+  ~/lnds/lncli --lnddir=~/.lnd_xsn -rpcserver=localhost:10003 --no-macaroons $1 $2 $3 $4
+}
+
+function lnbtc() {
+  ~/lnds/lncli --lnddir=~/.lnd_btc -rpcserver=localhost:10002 --no-macaroons $1 $2 $3 $4
+}
+
+function taillssd() {
+ sudo journalctl -f -u lssd
+}
+
+function tailbot() {
+ sudo journalctl -f -u bot
+}
