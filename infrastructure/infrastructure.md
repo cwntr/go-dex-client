@@ -53,7 +53,7 @@ So log on to your Ubuntu VM and get started with the following steps. It describ
 
 ## 3.) Start daemons in background and let them sync
 
-You could also download the respective bootstraps but for simplicity lets just start the daemons and let them sync in the background and proceed with further steps.
+You could also download the respective bootstrap but for simplicity lets just start the daemons and let them sync in the background and proceed with further steps.
  
 #### XSN
 > `cd ~/coins/xsn/bin`
@@ -152,7 +152,6 @@ maxlogfiles=10
 > `cd ~/coins/xsn/bin`
 
 > `./xsn-cli stop`
-
 
 > `cd ~/.xsncore/`
 
