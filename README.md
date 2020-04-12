@@ -18,9 +18,6 @@ In order to setup all mandatory components on your VM, have a look [infrastructu
  3. Copy the default `cfg.json` from the repository and modify it based on your setup.
  4. Execute the binary `./bot`
  
-### Examples to place orders, deal with the orderbook
-To interact with the bot you can send HTTP requests to fetch orderbook data, place orders, cancel orders or to retrieve your wallet LND's balance. Have a look in `examples` directory that contains example curl requests that interact with your local web server.  
-
 ## Create stub via protoc (if not up-to-date)
 Use the following link to install the prerequisites ([**https://grpc.io/docs/quickstart/go/**](https://grpc.io/docs/quickstart/go/)):
 
