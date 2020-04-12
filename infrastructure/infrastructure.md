@@ -127,7 +127,7 @@ So just execute the binary and terminate (Ctrl+C) it as soon as you see some err
 
 ## 9.) Configure XSN Lightning Daemon:
 
-**Important**: noseedbackup=1 means a default password will be used for wallet encryption -> this should only be used for testing purposes. If you want to specify your own password for wallet encryption, use noseedbackup=0 and you can use `./lncli create` to also see the backup seed.
+**Important**: noseedbackup=1 means a default password will be used for wallet encryption -> this should only be used for testing purposes. If you want to specify your own password for wallet encryption, use noseedbackup=0 and later on at step 11.)  and you can use `./lncli create` to also see the backup seed.
 
 `cd ~/.lnd_xsn`
 
@@ -200,11 +200,13 @@ which should give you once again the "blocks" and "headers" information
 
 
 ## 11.) Starting XSN Lightning Node
-
-- Add the all `*.service` files from [infratructure](infrastructure/systemd) to your `systemd` (/etc/systemd/system) 
+###### Preparation:
+- Add the all `*.service` files from [infratructure](infrastructure/systemd) to your `systemd` (/etc/systemd/system) with sudo permission, make sure to properly replace the fields of: `User`, `ExecStart` and `WorkingDirectory` to your user's names.
 - Add the shortcuts that will make your life easier operating the different lnd's.
-  - `nano ~/.bashrc` and scroll to end of file and paste the content of [bash profile](infrastructure/bash_profile)
-  - once the file is saved, simple execute `bash` in the command line and its updated
+  - `sudo nano ~/.bashrc` and scroll to end of file and paste the content of [bash profile](infrastructure/bash_profile)
+  - once the file is saved, simple execute `bash` in the command line and its updated. Which allows you to use shortcut like `lnxsn <command>` which will only have an effect to the XSN LND
+
+
 
 Starting the lnd_xsn with:
 
@@ -218,7 +220,16 @@ If its not working yet, you can execute the following command to get further det
 
 `sudo journalctl -f -u lnd_xsn`
 
-Once it works, you can check your current LND balance with `walletbalance` command:
+##### If you configured your LND wallet with nobackupseed=0 in lnd.conf:
+You need to consider the following things:
+1) First time starting the LND: `lnxsn create` -> this will go through the encryption process where you set your encryption password and also the backup seed will be outputted which you can store somewhere safe.
+2) Once you enabled the encryption, you need to do `lnxsn unlock` every time the LND has been restarted because it will be locked by default after restart.
+
+##### If you configured your LND wallet with nobackupseed=1 in lnd.conf:
+1) No need to create a further encryption because it is already encrypted with a default password 
+2) No need to "unlock" the wallet upon restart of the LND
+
+To check if the LND is active and unlocked try a command and check if you get proper outputs, e.g `walletbalance` command:
 
 `lnxsn walletbalance`
 
