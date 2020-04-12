@@ -391,13 +391,13 @@ Check if it's working:
 
 
 ## 16.) Bot installation
+
+Congratulations, you just setup all mandatory things to get to work with the Stakenet DexAPI. The following "bot" is just a simple application to show how to deal with the API. It has basic implementations which should only be considered a starting point. All the trading / algorithms are left up for development.
+
+
 `cd ~/bot`
 
-`wget https://github.com/cwntr/go-dex-trading-bot/releases/download/V1.3/bot-v1.5.zip`
-
-`unzip bot-v1.5.zip`
-
-`rm bot-v1.5.zip`
+`wget https://github.com/cwntr/go-dex-client/releases/download/v1.0.0/bot`
 
 `chmod +x bot`
 
@@ -467,7 +467,7 @@ Check if it's working:
 
 ## 17.) Start the bot
 
-##### Start the mandatory services that the bot can operate, if not done yet:
+##### Start the mandatory services that the bot can operate, if you not done yet:
 
 1. `sudo systemctl start lnd_xsn`
 
@@ -483,3 +483,4 @@ Check if it's working:
 ##### Stop bot
 `sudo systemctl stop bot`
 
+This "bot" will not place any orders or perform any actions but connecting to the API to check the infrastrucutre is setup correctly. The actual logic how to place orders / active trading needs to be done by your customized implementation.
