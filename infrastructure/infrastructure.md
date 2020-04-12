@@ -127,6 +127,8 @@ So just execute the binary and terminate (Ctrl+C) it as soon as you see some err
 
 ## 9.) Configure XSN Lightning Daemon:
 
+**Important**: noseedbackup=1 means a default password will be used for wallet encryption -> this should only be used for testing purposes. If you want to specify your own password for wallet encryption, use noseedbackup=0 and you can use ./lncli create to also see the backup seed.
+
 `cd ~/.lnd_xsn`
 
 `touch lnd.conf`
@@ -153,7 +155,7 @@ chan-enable-timeout=1m
 max-cltv-expiry=10080
 maxlogfiles=10
 ```
-**Important**: noseedbackup=1 means a default password will be used for wallet encryption -> this should only be used for testing purposes. If you want to specify your own password for wallet encryption, use noseedbackup=0 and you can use ./lncli create to also see the backup seed.
+
 
 ## 10.) Configure XSND - XSN Core wallet
 `cd ~/coins/xsn/bin`
