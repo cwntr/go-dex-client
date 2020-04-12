@@ -259,7 +259,7 @@ In this case you'll open a channel to the XSN Hub having a local balance of 5 XS
 
 [wait ~5m]
 
-`lnxsn listchannels` check that you have 2 channels -1 channel filled with local balance, 1 channel filled with remote balance
+`lnxsn listchannels` check that you have 2 channels: 1 channel filled with local balance, 1 channel filled with remote balance
 
 **From this point on, you are done with setting up everything for XSN. What's to follow is to do the same steps 9.) - 13.) for LTC and BTC.**
 
