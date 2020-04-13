@@ -12,11 +12,9 @@ The official XSN DexAPI with a trading bot example written in Scala can be found
 
 In order to setup all mandatory components on your VM, have a look [infrastructure.md](infrastructure/infrastructure.md) which is a step by step installation guide.
 
-## Run the bot
- 1. Download the **UNIX** `bot` binary for your from the release
- 2. Create a directory `certs` and paste all the lnd's `tls.cert` files
- 3. Copy the default `cfg.json` from the repository and modify it based on your setup.
- 4. Execute the binary `./bot`
+## Run the client
+Once the mandatory components are installed, you can head over to [bot.md](infrastructure/bot.md) and get the client running.
+This client will only connect to the API and make sure the infrastructure is set up correctly, no orders will be placed.
  
 ## Create stub via protoc (if not up-to-date)
 Use the following link to install the prerequisites ([**https://grpc.io/docs/quickstart/go/**](https://grpc.io/docs/quickstart/go/)):
