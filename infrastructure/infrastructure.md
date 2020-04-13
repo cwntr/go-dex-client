@@ -2,10 +2,12 @@
 
 In order to get the client running, you need to install some mandatory components. This guide will follow you through the full installation process with step by step commands to be executed.
 
-Your VM should have at least:
- - 4x vCPUs 
- - 4 GB of RAM
- - 500 GB HDD
+VM requirements:
+| Minimum  | Recommended |
+| ------------- | ------------- |
+| 4x vCPUs  | 8x vCPUs |
+| 8 GB of RAM | 16 GB of RAM  |
+| 500 GB HDD | 600+ GB HDD |
  
 to get the components (fully synchronized BTC, LTC and XSN chains and 3x Lightning Network Daemon) running.
 
@@ -125,6 +127,8 @@ So just execute the binary and terminate (Ctrl+C) it as soon as you see some err
 
 ## 9.) Configure XSN Lightning Daemon:
 
+**Important**: noseedbackup=1 means a default password will be used for wallet encryption -> this should only be used for testing purposes. If you want to specify your own password for wallet encryption, use noseedbackup=0 and later on at step 11.)  and you can use `./lncli create` to also see the backup seed.
+
 `cd ~/.lnd_xsn`
 
 `touch lnd.conf`
@@ -151,6 +155,7 @@ chan-enable-timeout=1m
 max-cltv-expiry=10080
 maxlogfiles=10
 ```
+
 
 ## 10.) Configure XSND - XSN Core wallet
 `cd ~/coins/xsn/bin`
@@ -195,11 +200,16 @@ which should give you once again the "blocks" and "headers" information
 
 
 ## 11.) Starting XSN Lightning Node
-
-- Add the all `*.service` files from [infratructure](infrastructure/systemd) to your `systemd` (/etc/systemd/system) 
+###### Preparation:
+- Add the all `*.service` files from [infratructure](infrastructure/systemd) to your `systemd` (/etc/systemd/system) with sudo permission, make sure to properly replace the fields of: `User`, `ExecStart` and `WorkingDirectory` to your user's name and the path is matching to locate the binaries.
 - Add the shortcuts that will make your life easier operating the different lnd's.
-  - `nano ~/.bashrc` and scroll to end of file and paste the content of [bash profile](infrastructure/bash_profile)
-  - once the file is saved, simple execute `bash` in the command line and its updated
+  - `sudo nano ~/.bashrc` and scroll to end of file and paste the content of [bash profile](infrastructure/bash_profile)
+  - once the file is saved, simple execute `bash` in the command line and its updated. Which allows you to use shortcut like 
+    - `lnxsn <command>` which will only have an effect to the XSN LND
+    - `lnltc <command>` which will only have an effect to the LTC LND
+    - `lnbtc <command>` which will only have an effect to the BTC LND
+
+
 
 Starting the lnd_xsn with:
 
@@ -213,7 +223,16 @@ If its not working yet, you can execute the following command to get further det
 
 `sudo journalctl -f -u lnd_xsn`
 
-Once it works, you can check your current LND balance with `walletbalance` command:
+##### If you configured your LND wallet with nobackupseed=0 in lnd.conf:
+You need to consider the following things:
+1) First time starting the LND: `lnxsn create` -> this will go through the encryption process where you set your encryption password and also the backup seed will be outputted which you can store somewhere safe.
+2) Once you enabled the encryption, you need to do `lnxsn unlock` every time the LND has been restarted because it will be locked by default after restart.
+
+##### If you configured your LND wallet with nobackupseed=1 in lnd.conf:
+1) No need to create a further encryption because it is already encrypted with a default password 
+2) No need to "unlock" the wallet upon restart of the LND
+
+To check if the LND is active and unlocked try a command and check if you get proper outputs, e.g `walletbalance` command:
 
 `lnxsn walletbalance`
 
@@ -225,6 +244,7 @@ Connect to the XSN Lightning Hubs:
 
 [wait a few seconds]
 Check whether it's connected properly to the network by outputting the network graph.
+
 `lnxsn describegraph`
 
 ## 12.) Fund your XSN Node
@@ -242,7 +262,7 @@ In this case you'll open a channel to the XSN Hub having a local balance of 5 XS
 
 [wait ~5m]
 
-`lnxsn listchannels` check that you have 2 channels -1 channel filled with local balance, 1 channel filled with remote balance
+`lnxsn listchannels` check that you have 2 channels: 1 channel filled with local balance, 1 channel filled with remote balance
 
 **From this point on, you are done with setting up everything for XSN. What's to follow is to do the same steps 9.) - 13.) for LTC and BTC.**
 
@@ -372,93 +392,29 @@ Check if it's working:
 
 `sudo systemctl status lssd`
 
+## Done
 
-## 16.) Bot installation
-`cd ~/bot`
+Congratulations, you just setup all mandatory things to get to work with the Stakenet DexAPI. 
+What next is to run a client that consumes this API.
+You could:
+  - run the example of a DexAPI client following the next steps described in [client installation](bot.md) which is only the API connecting part.
+  - checkout the [scala implementation from X9](https://github.com/X9Developers/DexAPI/tree/master/trading-bot)
+  - take this repo as a template and build some trading logic on top of it 
+ 
 
-`wget https://github.com/cwntr/go-dex-client/releases/download/v1.0.0/bot`
+## Extra: LND config
 
-`chmod +x bot`
+Current XSN Lightning Network Explorer:
 
-#### copy tls to local bot path
-
-`cp ~/.lnd_xsn/tls.cert ~/bot/certs/xsn.cert`
-
-`cp ~/.lnd_ltc/tls.cert ~/bot/certs/ltc.cert`
-
-`cp ~/.lnd_btc/tls.cert ~/bot/certs/btc.cert`
-
-
-##### configure the bot
-
-`touch cfg.json`
-
-`nano cfg.json` -default:
+You can give your Lightning nodes a name (alias) and an unique color to easier find your node in network explorers.
+You can do that by modifying the respective `lnd.conf` from the `.lnd_* directory` and `sudo systemctl stop lnd_xsn` & `sudo systemctl start lnd_xsn` start your LND node.
 
 ```
-{
-  "botCfg": {
-    "host":"localhost",
-    "port":9999,
-    "lnCLIPath": "/home/ubuntu/lnds/lncli",
-    "jobInterval": "5s",
-    "logLevel": "debug",
-    "orderLimit": 10000
-  },
-  "lssdConfig": {
-    "host": "",
-    "port": 50051,
-    "timeout": "500s"
-  },
-  "xsnLNDConfig": {
-    "lndDir": "/home/ubuntu/.lnd_xsn/",
-    "certPath":"certs/xsn.cert",
-    "host": "localhost",
-    "port": 10003,
-    "hubPeers": [
-      {"remoteKey": "0396ca2f7cec03d3d179464acd57b4e6eabebb5f201705fa56e83363e3ccc622bb", "address": "134.209.164.91:11384"},
-      {"remoteKey": "03bc3a97ffad197796fc2ea99fc63131b2fd6158992f174860c696af9f215b5cf1", "address": "134.209.164.91:21384"}
-    ]
-  },
-  "ltcLNDConfig": {
-    "lndDir":"/home/ubuntu/.lnd_ltc/",
-    "certPath":"certs/ltc.cert",
-    "host": "localhost",
-    "port": 10001,
-    "hubPeers": [
-      {"remoteKey": "0375e7d882b442785aa697d57c3ed3aef523eb2743193389bd205f9ae0c609e6f3", "address": "134.209.164.91:11002"},
-      {"remoteKey": "0211eeda84950d7078aa62383c7b91def5cf6c5bb52d209a324cda0482dbfbe4d2", "address": "134.209.164.91:21002"}
-    ]
-  },
-  "btcLNDConfig": {
-    "lndDir":"/home/ubuntu/.lnd_btc/",
-    "certPath":"certs/btc.cert",
-    "host": "localhost",
-    "port": 10002,
-    "hubPeers" : [
-      {"remoteKey": "03757b80302c8dfe38a127c252700ec3052e5168a7ec6ba183cdab2ac7adad3910", "address":"134.209.164.91:11000"},
-      {"remoteKey": "02bfe54c7b2ce6f737f0074062a2f2aaf855f81741474c05fd4836a33595960e18", "address":"134.209.164.91:21000"}
-    ]
-  }
-}
+alias=stakenet.info
+color=#9d03fc
 ```
 
+For example with this alias and color the Lightning Node will look like that:
 
-## 17.) Start the bot
-
-##### Start the mandatory services that the bot can operate, if not done yet:
-
-1. `sudo systemctl start lnd_xsn`
-
-2. `sudo systemctl start lnd_ltc`
-
-3. `sudo systemctl start lnd_btc`
-
-4. `sudo systemctl start lssd`
-
-##### Actual bot start 
-`sudo systemctl start bot`
-
-##### Stop bot
-`sudo systemctl stop bot`
+![alt text](node_alias.JPG)
 
