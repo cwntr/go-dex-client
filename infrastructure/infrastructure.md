@@ -404,7 +404,7 @@ You could:
 
 ## Extra: LND config
 
-Current XSN Lightning Network Explorer:
+Current XSN Lightning Network Explorer: https://ln.stakenet.info/
 
 You can give your Lightning nodes a name (alias) and an unique color to easier find your node in network explorers.
 You can do that by modifying the respective `lnd.conf` from the `.lnd_* directory` and `sudo systemctl stop lnd_xsn` & `sudo systemctl start lnd_xsn` start your LND node.
