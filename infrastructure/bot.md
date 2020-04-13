@@ -77,8 +77,6 @@ The following "bot" is just a simple application to show how to deal with the AP
 }
 ```
 
-## 17.) Start the client
-
 ##### Start the mandatory services that the client can operate, if you not done yet:
 
 1. `sudo systemctl start lnd_xsn`
