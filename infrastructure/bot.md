@@ -115,7 +115,7 @@ If it looks like the following it means your infrastructure is not ready yet and
 
 ## Try out examples
 
-Once everything is finally setup, try it out! Have a look at [exmaples folder](../examples) which has a cURL collection of requests you could fire against your active client. It is also part of the release and should be next to your `bot` binary.
+Once everything is finally setup, try it out! Have a look at [examples folder](../examples) which has a cURL collection of requests you could fire against your active client. It is also part of the release and should be next to your `bot` binary.
 
 So, make sure the bot is running in a different terminal and execute the following examples.
 
