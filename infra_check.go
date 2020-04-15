@@ -56,11 +56,11 @@ func getChannelCapacities(currency string) (min int64, max int64) {
 	switch currency {
 	case common.CurrencyXSN:
 		min = 60000
-		max = 10000000000
+		max = 100000000000
 		return
 	case common.CurrencyLTC:
 		min = 275000
-		max = 100000000
+		max = 1000000000
 		return
 	case common.CurrencyBTC:
 		min = 20000
@@ -185,7 +185,8 @@ func checkInfra(currency string, printCLI bool) (InfraChecks, error) {
 					remoteBalance, _ := strconv.ParseInt(c.RemoteBalance, 10, 64)
 					rbf := float64(remoteBalance)
 					if printCLI {
-						logger.Debugf("channel capacity to hub is OK (chanID: %s) local_balance: %d (%.8f %s), remote_balance: %d (%.8f %s) ",
+						logger.Debugf("[%s] channel capacity to hub is OK (chanID: %s) local_balance: %d (%.8f %s), remote_balance: %d (%.8f %s) ",
+							currency,
 							c.ChanID,
 							localBalance,
 							lbf/1e8,
@@ -198,7 +199,7 @@ func checkInfra(currency string, printCLI bool) (InfraChecks, error) {
 					channelCheck = true
 					cntHubChannels++
 				} else {
-					logger.Errorf("channel capacity NOT OK -> your capacity %d must be between %d and %d ", capacity, capacityMin, capacityMax)
+					logger.Errorf("[%s] channel capacity NOT OK -> your capacity %d must be between %d and %d ", currency, capacity, capacityMin, capacityMax)
 				}
 			}
 		}
@@ -207,7 +208,7 @@ func checkInfra(currency string, printCLI bool) (InfraChecks, error) {
 	if cntHubChannels > 0 && cntHubChannels%2 != 0 {
 		logger.Errorf("Infra check: %s - channels (2/2) FAILED", currency)
 		hubChannelsCheck.Result = false
-		hubChannelsCheck.Details = fmt.Sprintf("channels NOT OK: missing back channel(s)")
+		hubChannelsCheck.Details = fmt.Sprintf("[%s] channels NOT OK: missing back channel(s)", currency)
 		return append(infra, hubChannelsCheck), err
 	}
 

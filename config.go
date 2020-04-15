@@ -50,16 +50,6 @@ type Config struct {
 	BTC        LNDConfig  `json:"btcLNDConfig"`
 }
 
-// CancelTradingPair struct holds information how to cancel placed orders.
-// Currency is mandatory ("XSN_LTC" or "XSN_BTC")
-// (optional) DeleteAll if true, will delete all "own" orders from current orderbook
-// (optional) OrderIDs will delete all orders with specified orderIDs
-type CancelTradingPair struct {
-	TradingPair string   `json:"tradingPair"`
-	DeleteAll   bool     `json:"deleteAll,omitempty"`
-	OrderIDs    []string `json:"orderIds,omitempty"`
-}
-
 // Reads the entire config, "cfg.json" is hardcoded and must be placed on same level as the application binary
 func readConfig() error {
 	file, err := os.Open("cfg.json")

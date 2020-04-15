@@ -1,19 +1,19 @@
 {
   "botCfg": {
-      "host":"localhost",
-      "port":9999,
-      "lnCLIPath": "/home/ln_node/lncli",
-      "jobInterval": "2s",
-      "orderLimit": 1000,
-      "logLevel": "debug"
+    "host":"localhost",
+    "port":9999,
+    "lnCLIPath": "/home/ubuntu/lnds/lncli",
+    "jobInterval": "5s",
+    "logLevel": "info",
+    "orderLimit": 10000
   },
   "lssdConfig": {
     "host": "",
     "port": 50051,
-    "timeout": "100s"
+    "timeout": "500s"
   },
   "xsnLNDConfig": {
-    "lndDir": "/root/.lnd_xsn/",
+    "lndDir": "/home/ubuntu/.lnd_xsn/",
     "certPath":"certs/xsn.cert",
     "host": "localhost",
     "port": 10003,
@@ -23,7 +23,7 @@
     ]
   },
   "ltcLNDConfig": {
-    "lndDir":"/root/.lnd_ltc/",
+    "lndDir":"/home/ubuntu/.lnd_ltc/",
     "certPath":"certs/ltc.cert",
     "host": "localhost",
     "port": 10001,
@@ -33,12 +33,13 @@
     ]
   },
   "btcLNDConfig": {
-    "certPath":"certs/lnd_btc.cert",
+    "lndDir":"/home/ubuntu/.lnd_btc/",
+    "certPath":"certs/btc.cert",
     "host": "localhost",
-    "port": 10009,
+    "port": 10002,
     "hubPeers" : [
-      {"remoteKey": "03f1b0a270f5e57292732c3b44b2582324b144df6b2981a3ba46b6a5bc435479bc", "address":"134.209.164.91:8000"},
-      {"remoteKey": "023a0c53433904339b7bdbd725151aaed10922e2f9aca5ec979ed75a370615f24e", "address":"134.209.164.91:9000"}
+      {"remoteKey": "03757b80302c8dfe38a127c252700ec3052e5168a7ec6ba183cdab2ac7adad3910", "address":"134.209.164.91:11000"},
+      {"remoteKey": "02bfe54c7b2ce6f737f0074062a2f2aaf855f81741474c05fd4836a33595960e18", "address":"134.209.164.91:21000"}
     ]
   }
 }

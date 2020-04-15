@@ -17,6 +17,8 @@ to get the components (fully synchronized BTC, LTC and XSN chains and 3x Lightni
 
 So log on to your Ubuntu VM and get started with the following steps. It describes the installation for a user named "ubuntu".
 
+**Remark**: if decide to install everything as a `root` user (not recommended) you need to do make sure to dont use any /home/* directories and always keep in mind you are running everything on `/root` directory.
+
 ## 1.) Create basic folder structure:
 `mkdir ~/bot`
 
@@ -397,7 +399,7 @@ Check if it's working:
 Congratulations, you just setup all mandatory things to get to work with the Stakenet DexAPI. 
 What next is to run a client that consumes this API.
 You could:
-  - run the example of a DexAPI client following the next steps described in [client installation](bot.md) which is only the API connecting part.
+  - run the example of a DexAPI client following the next steps described in [client installation](bot.md) which allows you list, place & cancel orders
   - checkout the [scala implementation from X9](https://github.com/X9Developers/DexAPI/tree/master/trading-bot)
   - take this repo as a template and build some trading logic on top of it 
  
@@ -418,3 +420,10 @@ For example with this alias and color the Lightning Node will look like that:
 
 ![alt text](node_alias.JPG)
 
+---
+
+If you find this page any useful, feel free to spare some coin:
+
+**XSN:** XfiBSgdNJSVWsfZzKFa1HrcU8WgFCCUXGn
+
+**ETH:** 0x28260E316Fa2491Af0005b7dF0085073B844B97b

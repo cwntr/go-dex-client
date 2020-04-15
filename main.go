@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/gin-gonic/gin"
 	"time"
 
 	"github.com/cwntr/go-dex-client/pkg/common"
@@ -68,7 +69,6 @@ func main() {
 		logger.Errorf("error adding LTC to trading config, err %v", err)
 		return
 	}
-
 	err = tradingCfg.Add(common.CurrencyBTC, cfg.BTC.CertPath, cfg.BTC.Host, cfg.BTC.Port)
 	if err != nil {
 		logger.Errorf("error adding BTC to trading config, err %v", err)
@@ -91,6 +91,11 @@ func main() {
 		return
 	}
 	_, err = checkInfra(common.CurrencyLTC, false)
+	if err != nil {
+		logger.Errorf("infra check, err %v", err)
+		return
+	}
+	_, err = checkInfra(common.CurrencyBTC, false)
 	if err != nil {
 		logger.Errorf("infra check, err %v", err)
 		return
@@ -122,8 +127,14 @@ func main() {
 	wgClose := &sync.WaitGroup{}
 	defer wgClose.Wait()
 
+	//Setup routes
+	gin.SetMode(gin.DebugMode)
+	router := gin.Default()
+	addRoutes(router)
+
 	srv := &http.Server{
-		Addr: fmt.Sprintf("%s:%d", cfg.Bot.Host, cfg.Bot.Port),
+		Addr:    fmt.Sprintf("%s:%d", cfg.Bot.Host, cfg.Bot.Port),
+		Handler: router,
 	}
 
 	// setup server
