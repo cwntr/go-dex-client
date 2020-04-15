@@ -5,7 +5,7 @@
 
 A client implementation for Stakenet's XSN DexAPI (Decentralized Exchange) written in golang.
 
-The official XSN DexAPI with a trading bot example written in Scala can be found here: [**github.com/X9Developers/DexAPI**](https://github.com/X9Developers/DexAPI). It also has an extensive documentation how to set up all the required components on your machine which is mandatory to get this bot running, since this repository only provides an alternative trading bot implementation.
+The official XSN DexAPI with a trading bot example written in Scala can be found here: [**github.com/X9Developers/DexAPI**](https://github.com/X9Developers/DexAPI). It also has an extensive documentation how to set up all the required components on your machine which is mandatory to get this bot running, since this repository only provides an alternative DexAPI Client implementation.
 
 ## Components
 ![alt text](infrastructure/components.png)
@@ -13,8 +13,7 @@ The official XSN DexAPI with a trading bot example written in Scala can be found
 In order to setup all mandatory components on your VM, have a look [infrastructure.md](infrastructure/infrastructure.md) which is a step by step installation guide.
 
 ## Run the client
-Once the mandatory components are installed, you can head over to [bot.md](infrastructure/bot.md) and get the client running.
-This client will only connect to the API and make sure the infrastructure is set up correctly, no orders will be placed.
+Once the mandatory components are installed, you can head over to [DexAPI Client installation.md](infrastructure/bot.md) and get the client running. It has basic functionality to list, place and cancel orders.
  
 ## Create stub via protoc (if not up-to-date)
 Use the following link to install the prerequisites ([**https://grpc.io/docs/quickstart/go/**](https://grpc.io/docs/quickstart/go/)):
