@@ -101,7 +101,7 @@ You can proceed with the next steps already and let it sync in background.
 `sudo apt-get install libzmq3-dev`
 
 ## 6.) Install unzip
-`sudo apt get install unzip`
+`sudo apt-get install unzip`
 
 ## 7.) Download lnd's
 `cd ~/lnds`
@@ -201,9 +201,9 @@ which should give you once again the "blocks" and "headers" information
 
 ## 11.) Starting XSN Lightning Node
 ###### Preparation:
-- Add the all `*.service` files from [infratructure](infrastructure/systemd) to your `systemd` (/etc/systemd/system) with sudo permission, make sure to properly replace the fields of: `User`, `ExecStart` and `WorkingDirectory` to your user's name and the path is matching to locate the binaries.
+- Add the all `*.service` files from [infratructure](/systemd) to your `systemd` (/etc/systemd/system) with sudo permission, make sure to properly replace the fields of: `User`, `ExecStart` and `WorkingDirectory` to your user's name and the path is matching to locate the binaries.
 - Add the shortcuts that will make your life easier operating the different lnd's.
-  - `sudo nano ~/.bashrc` and scroll to end of file and paste the content of [bash profile](infrastructure/bash_profile)
+  - `sudo nano ~/.bashrc` and scroll to end of file and paste the content of [bash profile](bash_profile)
   - once the file is saved, simple execute `bash` in the command line and its updated. Which allows you to use shortcut like 
     - `lnxsn <command>` which will only have an effect to the XSN LND
     - `lnltc <command>` which will only have an effect to the LTC LND
