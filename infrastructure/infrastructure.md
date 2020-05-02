@@ -138,7 +138,7 @@ So just execute the binary and terminate (Ctrl+C) it as soon as you see some err
 `nano lnd.conf` paste:
 
 ```
-noseedbackup=1
+noseedbackup=0
 rpclisten=localhost:10003
 listen=0.0.0.0:8403
 restlisten=127.0.0.1:8083
@@ -274,7 +274,7 @@ In this case you'll open a channel to the XSN Hub having a local balance of 5 XS
 
 ##### LTC LND config:
 ```
-noseedbackup=1
+noseedbackup=0
 rpclisten=localhost:10001
 listen=0.0.0.0:8401
 restlisten=127.0.0.1:8081
@@ -329,7 +329,7 @@ Have some patience with this one, it takes some time for the transactions to be 
 
 ##### BTC LND config:
 ```
-noseedbackup=1
+noseedbackup=0
 rpclisten=localhost:10002
 listen=0.0.0.0:8402
 restlisten=127.0.0.1:8082
