@@ -19,6 +19,11 @@ service currencies {
   //
   // For now, only currencies supported by lnd (lightning network) work.
   rpc AddCurrency (AddCurrencyRequest) returns (AddCurrencyResponse);
+
+
+   // Return added currencies, like LTC, before calling this method, you must
+   // have already added some currency
+  rpc GetAddedCurrencies(GetAddedCurrenciesRequest) returns (GetAddedCurrenciesResponse);
 }
 
 message AddCurrencyRequest {
@@ -40,6 +45,12 @@ message AddCurrencyRequest {
 }
 message AddCurrencyResponse {}
 
+message GetAddedCurrenciesRequest{}
+
+message GetAddedCurrenciesResponse {
+ repeated string currency = 1; // added currencies, like LTC
+}
+
 // trading pairs
 service tradingPairs {
   // Enables the given trading pair, like XSN_LTC, before calling this method, you must
@@ -49,12 +60,23 @@ service tradingPairs {
   // try waiting some seconds (5 should be enough) before performing any other operation, so
   // that lssd has the time to sync because this is done in the background.
   rpc EnableTradingPair (EnableTradingPairRequest) returns (EnableTradingPairResponse);
+
+  // Return current active trading pair, like XSN_LTC, before calling this method, you must
+  // have already added and activated some trading pair
+  rpc GetActiveTradingPair (GetActiveTradingPairRequest) returns (GetActiveTradingPairResponse);
 }
 
 message EnableTradingPairRequest {
   string pairId = 1; // the trading pair to enable, like XSN_LTC
 }
 message EnableTradingPairResponse {}
+
+message GetActiveTradingPairRequest {}
+
+message GetActiveTradingPairResponse {
+  repeated string pairId = 1; // current active trading pairs, like XSN_LTC
+}
+
 
 // orders
 service orders {
@@ -127,10 +149,12 @@ message SubscribeOrdersRequest {}
 
 message OrderUpdate {
   oneof update {
-    // An order that was added to the order book.
-    Order order = 1;
-    // An order that was removed from the order book.
+    // An order that was added to the orderbook.
+    Order orderAdded = 1;
+    // An order that was removed from the orderbook.
     Order orderRemoval = 2;
+    // An order that was changed in orderbook.
+    Order orderChanged = 3;
   }
 }
 
@@ -147,6 +171,15 @@ message Order {
   OrderSide side = 6;
   // Whether this order is a local own order or a remote peer order.
   bool isOwnOrder = 7;
+  // Currently open partial trades, empty if order hasn't posted any partial trades.
+  repeated OrderPortion open = 8;
+  // Already completed partial trades, empty if order hasn't completed any partial trades.
+  repeated OrderPortion closed = 9;
+}
+
+message OrderPortion {
+  string orderId = 1;
+  BigInteger amount = 2;
 }
 
 // swaps
@@ -201,4 +234,59 @@ message SwapFailure {
   BigInteger funds = 3;
   // The reason why the swap failed.
   string failureReason = 4;
+}
+
+// renting
+service renting {
+  rpc GenerateRentChannelInvoice (GenerateInvoiceToRentChannelCommand) returns (GenerateInvoiceToRentChannelResponse);
+  rpc RentChannel (RentChannelCommand) returns (RentChannelResponse);
+  rpc GetChannelStatus (GetChannelStatusCommand) returns (GetChannelStatusResponse);
+  rpc GetFeeToRentChannel (GetFeeToRentChannelCommand) returns (GetFeeToRentChannelResponse);
+}
+
+// The command to create an invoice to pay the channel rental
+message GenerateInvoiceToRentChannelCommand {
+  string currency = 1; // the currency where the hub will open a channel to the wallet
+  string payingCurrency = 2; // the currency available on the wallet to pay the funds
+  BigInteger capacity = 3; // the amount to rent on the channel in satoshis
+  int64 lifetimeSeconds = 4; // the amount of seconds the channel will stay active
+}
+// Event for GenerateInvoiceToRentChannelCommand
+message GenerateInvoiceToRentChannelResponse {
+  string paymentRequest = 1;  // A bare-bones invoice for a payment within the Lightning Network. With the details of the invoice, the sender has all the data necessary to send a payment to the recipient.
+}
+
+// Ask the server to create a channel with a given node
+// The channel details are stored with GenerateInvoiceToRentChannelCommand
+// - Response is RentChannelResponse
+message RentChannelCommand {
+  bytes paymentHash = 1; // The 32 bytes raw payment_hash paying the invoice for the fee.
+  string payingCurrency = 2; // The currency where you paid the fee
+  bytes nodePublicKey = 3; // the wallet's public key to open the channel
+}
+// Event for RentChannelCommand
+message RentChannelResponse {
+  string channelId = 1;
+}
+
+// Command to know the status of a channel.
+message GetChannelStatusCommand {
+  string channelId = 1; // The channel id
+}
+// Event for GetChannelStatusCommand
+message GetChannelStatusResponse {
+  string status = 1; // The status, OPENING - ACTIVE - CLOSED
+  int64 expiresAt = 2; // The timestamp when the channel will be closed
+}
+
+// The command to calculate the fee to rent a channel
+message GetFeeToRentChannelCommand {
+  string currency = 1; // the currency where the hub will open a channel to the wallet
+  string payingCurrency = 2; // the currency available on the wallet to pay the funds
+  BigInteger capacity = 3; // the amount to rent on the channel in satoshis
+  int64 lifetimeSeconds = 4; // the amount of seconds the channel will stay active
+}
+// Event for GenerateInvoiceToRentChannelCommand
+message GetFeeToRentChannelResponse {
+  BigInteger fee = 1;
 }

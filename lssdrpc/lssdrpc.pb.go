@@ -14,6 +14,7 @@ import (
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
+// Reference imports to suppress errors if they are not otherwise used.
 var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
@@ -71,7 +72,7 @@ func (x SwapSuccess_Role) String() string {
 }
 
 func (SwapSuccess_Role) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_197ef81533ed7ae1, []int{18, 0}
+	return fileDescriptor_197ef81533ed7ae1, []int{23, 0}
 }
 
 // A non-negative Big Integer represented as string, like "100000000"
@@ -247,6 +248,76 @@ func (m *AddCurrencyResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_AddCurrencyResponse proto.InternalMessageInfo
 
+type GetAddedCurrenciesRequest struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetAddedCurrenciesRequest) Reset()         { *m = GetAddedCurrenciesRequest{} }
+func (m *GetAddedCurrenciesRequest) String() string { return proto.CompactTextString(m) }
+func (*GetAddedCurrenciesRequest) ProtoMessage()    {}
+func (*GetAddedCurrenciesRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_197ef81533ed7ae1, []int{3}
+}
+
+func (m *GetAddedCurrenciesRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetAddedCurrenciesRequest.Unmarshal(m, b)
+}
+func (m *GetAddedCurrenciesRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetAddedCurrenciesRequest.Marshal(b, m, deterministic)
+}
+func (m *GetAddedCurrenciesRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetAddedCurrenciesRequest.Merge(m, src)
+}
+func (m *GetAddedCurrenciesRequest) XXX_Size() int {
+	return xxx_messageInfo_GetAddedCurrenciesRequest.Size(m)
+}
+func (m *GetAddedCurrenciesRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetAddedCurrenciesRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetAddedCurrenciesRequest proto.InternalMessageInfo
+
+type GetAddedCurrenciesResponse struct {
+	Currency             []string `protobuf:"bytes,1,rep,name=currency,proto3" json:"currency,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetAddedCurrenciesResponse) Reset()         { *m = GetAddedCurrenciesResponse{} }
+func (m *GetAddedCurrenciesResponse) String() string { return proto.CompactTextString(m) }
+func (*GetAddedCurrenciesResponse) ProtoMessage()    {}
+func (*GetAddedCurrenciesResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_197ef81533ed7ae1, []int{4}
+}
+
+func (m *GetAddedCurrenciesResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetAddedCurrenciesResponse.Unmarshal(m, b)
+}
+func (m *GetAddedCurrenciesResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetAddedCurrenciesResponse.Marshal(b, m, deterministic)
+}
+func (m *GetAddedCurrenciesResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetAddedCurrenciesResponse.Merge(m, src)
+}
+func (m *GetAddedCurrenciesResponse) XXX_Size() int {
+	return xxx_messageInfo_GetAddedCurrenciesResponse.Size(m)
+}
+func (m *GetAddedCurrenciesResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetAddedCurrenciesResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetAddedCurrenciesResponse proto.InternalMessageInfo
+
+func (m *GetAddedCurrenciesResponse) GetCurrency() []string {
+	if m != nil {
+		return m.Currency
+	}
+	return nil
+}
+
 type EnableTradingPairRequest struct {
 	PairId               string   `protobuf:"bytes,1,opt,name=pairId,proto3" json:"pairId,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -258,7 +329,7 @@ func (m *EnableTradingPairRequest) Reset()         { *m = EnableTradingPairReque
 func (m *EnableTradingPairRequest) String() string { return proto.CompactTextString(m) }
 func (*EnableTradingPairRequest) ProtoMessage()    {}
 func (*EnableTradingPairRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_197ef81533ed7ae1, []int{3}
+	return fileDescriptor_197ef81533ed7ae1, []int{5}
 }
 
 func (m *EnableTradingPairRequest) XXX_Unmarshal(b []byte) error {
@@ -296,7 +367,7 @@ func (m *EnableTradingPairResponse) Reset()         { *m = EnableTradingPairResp
 func (m *EnableTradingPairResponse) String() string { return proto.CompactTextString(m) }
 func (*EnableTradingPairResponse) ProtoMessage()    {}
 func (*EnableTradingPairResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_197ef81533ed7ae1, []int{4}
+	return fileDescriptor_197ef81533ed7ae1, []int{6}
 }
 
 func (m *EnableTradingPairResponse) XXX_Unmarshal(b []byte) error {
@@ -317,6 +388,76 @@ func (m *EnableTradingPairResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_EnableTradingPairResponse proto.InternalMessageInfo
 
+type GetActiveTradingPairRequest struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetActiveTradingPairRequest) Reset()         { *m = GetActiveTradingPairRequest{} }
+func (m *GetActiveTradingPairRequest) String() string { return proto.CompactTextString(m) }
+func (*GetActiveTradingPairRequest) ProtoMessage()    {}
+func (*GetActiveTradingPairRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_197ef81533ed7ae1, []int{7}
+}
+
+func (m *GetActiveTradingPairRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetActiveTradingPairRequest.Unmarshal(m, b)
+}
+func (m *GetActiveTradingPairRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetActiveTradingPairRequest.Marshal(b, m, deterministic)
+}
+func (m *GetActiveTradingPairRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetActiveTradingPairRequest.Merge(m, src)
+}
+func (m *GetActiveTradingPairRequest) XXX_Size() int {
+	return xxx_messageInfo_GetActiveTradingPairRequest.Size(m)
+}
+func (m *GetActiveTradingPairRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetActiveTradingPairRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetActiveTradingPairRequest proto.InternalMessageInfo
+
+type GetActiveTradingPairResponse struct {
+	PairId               []string `protobuf:"bytes,1,rep,name=pairId,proto3" json:"pairId,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetActiveTradingPairResponse) Reset()         { *m = GetActiveTradingPairResponse{} }
+func (m *GetActiveTradingPairResponse) String() string { return proto.CompactTextString(m) }
+func (*GetActiveTradingPairResponse) ProtoMessage()    {}
+func (*GetActiveTradingPairResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_197ef81533ed7ae1, []int{8}
+}
+
+func (m *GetActiveTradingPairResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetActiveTradingPairResponse.Unmarshal(m, b)
+}
+func (m *GetActiveTradingPairResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetActiveTradingPairResponse.Marshal(b, m, deterministic)
+}
+func (m *GetActiveTradingPairResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetActiveTradingPairResponse.Merge(m, src)
+}
+func (m *GetActiveTradingPairResponse) XXX_Size() int {
+	return xxx_messageInfo_GetActiveTradingPairResponse.Size(m)
+}
+func (m *GetActiveTradingPairResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetActiveTradingPairResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetActiveTradingPairResponse proto.InternalMessageInfo
+
+func (m *GetActiveTradingPairResponse) GetPairId() []string {
+	if m != nil {
+		return m.PairId
+	}
+	return nil
+}
+
 type ListOrdersRequest struct {
 	PairId               string   `protobuf:"bytes,1,opt,name=pairId,proto3" json:"pairId,omitempty"`
 	IncludeOwnOrders     bool     `protobuf:"varint,2,opt,name=includeOwnOrders,proto3" json:"includeOwnOrders,omitempty"`
@@ -331,7 +472,7 @@ func (m *ListOrdersRequest) Reset()         { *m = ListOrdersRequest{} }
 func (m *ListOrdersRequest) String() string { return proto.CompactTextString(m) }
 func (*ListOrdersRequest) ProtoMessage()    {}
 func (*ListOrdersRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_197ef81533ed7ae1, []int{5}
+	return fileDescriptor_197ef81533ed7ae1, []int{9}
 }
 
 func (m *ListOrdersRequest) XXX_Unmarshal(b []byte) error {
@@ -391,7 +532,7 @@ func (m *ListOrdersResponse) Reset()         { *m = ListOrdersResponse{} }
 func (m *ListOrdersResponse) String() string { return proto.CompactTextString(m) }
 func (*ListOrdersResponse) ProtoMessage()    {}
 func (*ListOrdersResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_197ef81533ed7ae1, []int{6}
+	return fileDescriptor_197ef81533ed7ae1, []int{10}
 }
 
 func (m *ListOrdersResponse) XXX_Unmarshal(b []byte) error {
@@ -433,7 +574,7 @@ func (m *PlaceOrderRequest) Reset()         { *m = PlaceOrderRequest{} }
 func (m *PlaceOrderRequest) String() string { return proto.CompactTextString(m) }
 func (*PlaceOrderRequest) ProtoMessage()    {}
 func (*PlaceOrderRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_197ef81533ed7ae1, []int{7}
+	return fileDescriptor_197ef81533ed7ae1, []int{11}
 }
 
 func (m *PlaceOrderRequest) XXX_Unmarshal(b []byte) error {
@@ -501,7 +642,7 @@ func (m *PlaceOrderResponse) Reset()         { *m = PlaceOrderResponse{} }
 func (m *PlaceOrderResponse) String() string { return proto.CompactTextString(m) }
 func (*PlaceOrderResponse) ProtoMessage()    {}
 func (*PlaceOrderResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_197ef81533ed7ae1, []int{8}
+	return fileDescriptor_197ef81533ed7ae1, []int{12}
 }
 
 func (m *PlaceOrderResponse) XXX_Unmarshal(b []byte) error {
@@ -595,7 +736,7 @@ func (m *OrderbookFailure) Reset()         { *m = OrderbookFailure{} }
 func (m *OrderbookFailure) String() string { return proto.CompactTextString(m) }
 func (*OrderbookFailure) ProtoMessage()    {}
 func (*OrderbookFailure) Descriptor() ([]byte, []int) {
-	return fileDescriptor_197ef81533ed7ae1, []int{9}
+	return fileDescriptor_197ef81533ed7ae1, []int{13}
 }
 
 func (m *OrderbookFailure) XXX_Unmarshal(b []byte) error {
@@ -658,7 +799,7 @@ func (m *PlaceOrderFailure) Reset()         { *m = PlaceOrderFailure{} }
 func (m *PlaceOrderFailure) String() string { return proto.CompactTextString(m) }
 func (*PlaceOrderFailure) ProtoMessage()    {}
 func (*PlaceOrderFailure) Descriptor() ([]byte, []int) {
-	return fileDescriptor_197ef81533ed7ae1, []int{10}
+	return fileDescriptor_197ef81533ed7ae1, []int{14}
 }
 
 func (m *PlaceOrderFailure) XXX_Unmarshal(b []byte) error {
@@ -736,7 +877,7 @@ func (m *CancelOrderRequest) Reset()         { *m = CancelOrderRequest{} }
 func (m *CancelOrderRequest) String() string { return proto.CompactTextString(m) }
 func (*CancelOrderRequest) ProtoMessage()    {}
 func (*CancelOrderRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_197ef81533ed7ae1, []int{11}
+	return fileDescriptor_197ef81533ed7ae1, []int{15}
 }
 
 func (m *CancelOrderRequest) XXX_Unmarshal(b []byte) error {
@@ -781,7 +922,7 @@ func (m *CancelOrderResponse) Reset()         { *m = CancelOrderResponse{} }
 func (m *CancelOrderResponse) String() string { return proto.CompactTextString(m) }
 func (*CancelOrderResponse) ProtoMessage()    {}
 func (*CancelOrderResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_197ef81533ed7ae1, []int{12}
+	return fileDescriptor_197ef81533ed7ae1, []int{16}
 }
 
 func (m *CancelOrderResponse) XXX_Unmarshal(b []byte) error {
@@ -812,7 +953,7 @@ func (m *SubscribeOrdersRequest) Reset()         { *m = SubscribeOrdersRequest{}
 func (m *SubscribeOrdersRequest) String() string { return proto.CompactTextString(m) }
 func (*SubscribeOrdersRequest) ProtoMessage()    {}
 func (*SubscribeOrdersRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_197ef81533ed7ae1, []int{13}
+	return fileDescriptor_197ef81533ed7ae1, []int{17}
 }
 
 func (m *SubscribeOrdersRequest) XXX_Unmarshal(b []byte) error {
@@ -835,8 +976,9 @@ var xxx_messageInfo_SubscribeOrdersRequest proto.InternalMessageInfo
 
 type OrderUpdate struct {
 	// Types that are valid to be assigned to Update:
-	//	*OrderUpdate_Order
+	//	*OrderUpdate_OrderAdded
 	//	*OrderUpdate_OrderRemoval
+	//	*OrderUpdate_OrderChanged
 	Update               isOrderUpdate_Update `protobuf_oneof:"update"`
 	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
 	XXX_unrecognized     []byte               `json:"-"`
@@ -847,7 +989,7 @@ func (m *OrderUpdate) Reset()         { *m = OrderUpdate{} }
 func (m *OrderUpdate) String() string { return proto.CompactTextString(m) }
 func (*OrderUpdate) ProtoMessage()    {}
 func (*OrderUpdate) Descriptor() ([]byte, []int) {
-	return fileDescriptor_197ef81533ed7ae1, []int{14}
+	return fileDescriptor_197ef81533ed7ae1, []int{18}
 }
 
 func (m *OrderUpdate) XXX_Unmarshal(b []byte) error {
@@ -872,17 +1014,23 @@ type isOrderUpdate_Update interface {
 	isOrderUpdate_Update()
 }
 
-type OrderUpdate_Order struct {
-	Order *Order `protobuf:"bytes,1,opt,name=order,proto3,oneof"`
+type OrderUpdate_OrderAdded struct {
+	OrderAdded *Order `protobuf:"bytes,1,opt,name=orderAdded,proto3,oneof"`
 }
 
 type OrderUpdate_OrderRemoval struct {
 	OrderRemoval *Order `protobuf:"bytes,2,opt,name=orderRemoval,proto3,oneof"`
 }
 
-func (*OrderUpdate_Order) isOrderUpdate_Update() {}
+type OrderUpdate_OrderChanged struct {
+	OrderChanged *Order `protobuf:"bytes,3,opt,name=orderChanged,proto3,oneof"`
+}
+
+func (*OrderUpdate_OrderAdded) isOrderUpdate_Update() {}
 
 func (*OrderUpdate_OrderRemoval) isOrderUpdate_Update() {}
+
+func (*OrderUpdate_OrderChanged) isOrderUpdate_Update() {}
 
 func (m *OrderUpdate) GetUpdate() isOrderUpdate_Update {
 	if m != nil {
@@ -891,9 +1039,9 @@ func (m *OrderUpdate) GetUpdate() isOrderUpdate_Update {
 	return nil
 }
 
-func (m *OrderUpdate) GetOrder() *Order {
-	if x, ok := m.GetUpdate().(*OrderUpdate_Order); ok {
-		return x.Order
+func (m *OrderUpdate) GetOrderAdded() *Order {
+	if x, ok := m.GetUpdate().(*OrderUpdate_OrderAdded); ok {
+		return x.OrderAdded
 	}
 	return nil
 }
@@ -905,11 +1053,19 @@ func (m *OrderUpdate) GetOrderRemoval() *Order {
 	return nil
 }
 
+func (m *OrderUpdate) GetOrderChanged() *Order {
+	if x, ok := m.GetUpdate().(*OrderUpdate_OrderChanged); ok {
+		return x.OrderChanged
+	}
+	return nil
+}
+
 // XXX_OneofWrappers is for the internal use of the proto package.
 func (*OrderUpdate) XXX_OneofWrappers() []interface{} {
 	return []interface{}{
-		(*OrderUpdate_Order)(nil),
+		(*OrderUpdate_OrderAdded)(nil),
 		(*OrderUpdate_OrderRemoval)(nil),
+		(*OrderUpdate_OrderChanged)(nil),
 	}
 }
 
@@ -925,17 +1081,21 @@ type Order struct {
 	// Whether this order is a buy or sell
 	Side OrderSide `protobuf:"varint,6,opt,name=side,proto3,enum=lssdrpc.OrderSide" json:"side,omitempty"`
 	// Whether this order is a local own order or a remote peer order.
-	IsOwnOrder           bool     `protobuf:"varint,7,opt,name=isOwnOrder,proto3" json:"isOwnOrder,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	IsOwnOrder bool `protobuf:"varint,7,opt,name=isOwnOrder,proto3" json:"isOwnOrder,omitempty"`
+	// Currently open partial trades, empty if order hasn't posted any partial trades.
+	Open []*OrderPortion `protobuf:"bytes,8,rep,name=open,proto3" json:"open,omitempty"`
+	// Already completed partial trades, empty if order hasn't completed any partial trades.
+	Closed               []*OrderPortion `protobuf:"bytes,9,rep,name=closed,proto3" json:"closed,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
+	XXX_unrecognized     []byte          `json:"-"`
+	XXX_sizecache        int32           `json:"-"`
 }
 
 func (m *Order) Reset()         { *m = Order{} }
 func (m *Order) String() string { return proto.CompactTextString(m) }
 func (*Order) ProtoMessage()    {}
 func (*Order) Descriptor() ([]byte, []int) {
-	return fileDescriptor_197ef81533ed7ae1, []int{15}
+	return fileDescriptor_197ef81533ed7ae1, []int{19}
 }
 
 func (m *Order) XXX_Unmarshal(b []byte) error {
@@ -1005,6 +1165,67 @@ func (m *Order) GetIsOwnOrder() bool {
 	return false
 }
 
+func (m *Order) GetOpen() []*OrderPortion {
+	if m != nil {
+		return m.Open
+	}
+	return nil
+}
+
+func (m *Order) GetClosed() []*OrderPortion {
+	if m != nil {
+		return m.Closed
+	}
+	return nil
+}
+
+type OrderPortion struct {
+	OrderId              string      `protobuf:"bytes,1,opt,name=orderId,proto3" json:"orderId,omitempty"`
+	Amount               *BigInteger `protobuf:"bytes,2,opt,name=amount,proto3" json:"amount,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
+	XXX_unrecognized     []byte      `json:"-"`
+	XXX_sizecache        int32       `json:"-"`
+}
+
+func (m *OrderPortion) Reset()         { *m = OrderPortion{} }
+func (m *OrderPortion) String() string { return proto.CompactTextString(m) }
+func (*OrderPortion) ProtoMessage()    {}
+func (*OrderPortion) Descriptor() ([]byte, []int) {
+	return fileDescriptor_197ef81533ed7ae1, []int{20}
+}
+
+func (m *OrderPortion) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_OrderPortion.Unmarshal(m, b)
+}
+func (m *OrderPortion) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_OrderPortion.Marshal(b, m, deterministic)
+}
+func (m *OrderPortion) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_OrderPortion.Merge(m, src)
+}
+func (m *OrderPortion) XXX_Size() int {
+	return xxx_messageInfo_OrderPortion.Size(m)
+}
+func (m *OrderPortion) XXX_DiscardUnknown() {
+	xxx_messageInfo_OrderPortion.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_OrderPortion proto.InternalMessageInfo
+
+func (m *OrderPortion) GetOrderId() string {
+	if m != nil {
+		return m.OrderId
+	}
+	return ""
+}
+
+func (m *OrderPortion) GetAmount() *BigInteger {
+	if m != nil {
+		return m.Amount
+	}
+	return nil
+}
+
 type SubscribeSwapsRequest struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -1015,7 +1236,7 @@ func (m *SubscribeSwapsRequest) Reset()         { *m = SubscribeSwapsRequest{} }
 func (m *SubscribeSwapsRequest) String() string { return proto.CompactTextString(m) }
 func (*SubscribeSwapsRequest) ProtoMessage()    {}
 func (*SubscribeSwapsRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_197ef81533ed7ae1, []int{16}
+	return fileDescriptor_197ef81533ed7ae1, []int{21}
 }
 
 func (m *SubscribeSwapsRequest) XXX_Unmarshal(b []byte) error {
@@ -1050,7 +1271,7 @@ func (m *SwapResult) Reset()         { *m = SwapResult{} }
 func (m *SwapResult) String() string { return proto.CompactTextString(m) }
 func (*SwapResult) ProtoMessage()    {}
 func (*SwapResult) Descriptor() ([]byte, []int) {
-	return fileDescriptor_197ef81533ed7ae1, []int{17}
+	return fileDescriptor_197ef81533ed7ae1, []int{22}
 }
 
 func (m *SwapResult) XXX_Unmarshal(b []byte) error {
@@ -1148,7 +1369,7 @@ func (m *SwapSuccess) Reset()         { *m = SwapSuccess{} }
 func (m *SwapSuccess) String() string { return proto.CompactTextString(m) }
 func (*SwapSuccess) ProtoMessage()    {}
 func (*SwapSuccess) Descriptor() ([]byte, []int) {
-	return fileDescriptor_197ef81533ed7ae1, []int{18}
+	return fileDescriptor_197ef81533ed7ae1, []int{23}
 }
 
 func (m *SwapSuccess) XXX_Unmarshal(b []byte) error {
@@ -1264,7 +1485,7 @@ func (m *SwapFailure) Reset()         { *m = SwapFailure{} }
 func (m *SwapFailure) String() string { return proto.CompactTextString(m) }
 func (*SwapFailure) ProtoMessage()    {}
 func (*SwapFailure) Descriptor() ([]byte, []int) {
-	return fileDescriptor_197ef81533ed7ae1, []int{19}
+	return fileDescriptor_197ef81533ed7ae1, []int{24}
 }
 
 func (m *SwapFailure) XXX_Unmarshal(b []byte) error {
@@ -1313,14 +1534,412 @@ func (m *SwapFailure) GetFailureReason() string {
 	return ""
 }
 
+// The command to create an invoice to pay the channel rental
+type GenerateInvoiceToRentChannelCommand struct {
+	Currency             string      `protobuf:"bytes,1,opt,name=currency,proto3" json:"currency,omitempty"`
+	PayingCurrency       string      `protobuf:"bytes,2,opt,name=payingCurrency,proto3" json:"payingCurrency,omitempty"`
+	Capacity             *BigInteger `protobuf:"bytes,3,opt,name=capacity,proto3" json:"capacity,omitempty"`
+	LifetimeSeconds      int64       `protobuf:"varint,4,opt,name=lifetimeSeconds,proto3" json:"lifetimeSeconds,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
+	XXX_unrecognized     []byte      `json:"-"`
+	XXX_sizecache        int32       `json:"-"`
+}
+
+func (m *GenerateInvoiceToRentChannelCommand) Reset()         { *m = GenerateInvoiceToRentChannelCommand{} }
+func (m *GenerateInvoiceToRentChannelCommand) String() string { return proto.CompactTextString(m) }
+func (*GenerateInvoiceToRentChannelCommand) ProtoMessage()    {}
+func (*GenerateInvoiceToRentChannelCommand) Descriptor() ([]byte, []int) {
+	return fileDescriptor_197ef81533ed7ae1, []int{25}
+}
+
+func (m *GenerateInvoiceToRentChannelCommand) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GenerateInvoiceToRentChannelCommand.Unmarshal(m, b)
+}
+func (m *GenerateInvoiceToRentChannelCommand) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GenerateInvoiceToRentChannelCommand.Marshal(b, m, deterministic)
+}
+func (m *GenerateInvoiceToRentChannelCommand) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GenerateInvoiceToRentChannelCommand.Merge(m, src)
+}
+func (m *GenerateInvoiceToRentChannelCommand) XXX_Size() int {
+	return xxx_messageInfo_GenerateInvoiceToRentChannelCommand.Size(m)
+}
+func (m *GenerateInvoiceToRentChannelCommand) XXX_DiscardUnknown() {
+	xxx_messageInfo_GenerateInvoiceToRentChannelCommand.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GenerateInvoiceToRentChannelCommand proto.InternalMessageInfo
+
+func (m *GenerateInvoiceToRentChannelCommand) GetCurrency() string {
+	if m != nil {
+		return m.Currency
+	}
+	return ""
+}
+
+func (m *GenerateInvoiceToRentChannelCommand) GetPayingCurrency() string {
+	if m != nil {
+		return m.PayingCurrency
+	}
+	return ""
+}
+
+func (m *GenerateInvoiceToRentChannelCommand) GetCapacity() *BigInteger {
+	if m != nil {
+		return m.Capacity
+	}
+	return nil
+}
+
+func (m *GenerateInvoiceToRentChannelCommand) GetLifetimeSeconds() int64 {
+	if m != nil {
+		return m.LifetimeSeconds
+	}
+	return 0
+}
+
+// Event for GenerateInvoiceToRentChannelCommand
+type GenerateInvoiceToRentChannelResponse struct {
+	PaymentRequest       string   `protobuf:"bytes,1,opt,name=paymentRequest,proto3" json:"paymentRequest,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GenerateInvoiceToRentChannelResponse) Reset()         { *m = GenerateInvoiceToRentChannelResponse{} }
+func (m *GenerateInvoiceToRentChannelResponse) String() string { return proto.CompactTextString(m) }
+func (*GenerateInvoiceToRentChannelResponse) ProtoMessage()    {}
+func (*GenerateInvoiceToRentChannelResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_197ef81533ed7ae1, []int{26}
+}
+
+func (m *GenerateInvoiceToRentChannelResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GenerateInvoiceToRentChannelResponse.Unmarshal(m, b)
+}
+func (m *GenerateInvoiceToRentChannelResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GenerateInvoiceToRentChannelResponse.Marshal(b, m, deterministic)
+}
+func (m *GenerateInvoiceToRentChannelResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GenerateInvoiceToRentChannelResponse.Merge(m, src)
+}
+func (m *GenerateInvoiceToRentChannelResponse) XXX_Size() int {
+	return xxx_messageInfo_GenerateInvoiceToRentChannelResponse.Size(m)
+}
+func (m *GenerateInvoiceToRentChannelResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_GenerateInvoiceToRentChannelResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GenerateInvoiceToRentChannelResponse proto.InternalMessageInfo
+
+func (m *GenerateInvoiceToRentChannelResponse) GetPaymentRequest() string {
+	if m != nil {
+		return m.PaymentRequest
+	}
+	return ""
+}
+
+// Ask the server to create a channel with a given node
+// The channel details are stored with GenerateInvoiceToRentChannelCommand
+// - Response is RentChannelResponse
+type RentChannelCommand struct {
+	PaymentHash          []byte   `protobuf:"bytes,1,opt,name=paymentHash,proto3" json:"paymentHash,omitempty"`
+	PayingCurrency       string   `protobuf:"bytes,2,opt,name=payingCurrency,proto3" json:"payingCurrency,omitempty"`
+	NodePublicKey        []byte   `protobuf:"bytes,3,opt,name=nodePublicKey,proto3" json:"nodePublicKey,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RentChannelCommand) Reset()         { *m = RentChannelCommand{} }
+func (m *RentChannelCommand) String() string { return proto.CompactTextString(m) }
+func (*RentChannelCommand) ProtoMessage()    {}
+func (*RentChannelCommand) Descriptor() ([]byte, []int) {
+	return fileDescriptor_197ef81533ed7ae1, []int{27}
+}
+
+func (m *RentChannelCommand) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RentChannelCommand.Unmarshal(m, b)
+}
+func (m *RentChannelCommand) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RentChannelCommand.Marshal(b, m, deterministic)
+}
+func (m *RentChannelCommand) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RentChannelCommand.Merge(m, src)
+}
+func (m *RentChannelCommand) XXX_Size() int {
+	return xxx_messageInfo_RentChannelCommand.Size(m)
+}
+func (m *RentChannelCommand) XXX_DiscardUnknown() {
+	xxx_messageInfo_RentChannelCommand.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RentChannelCommand proto.InternalMessageInfo
+
+func (m *RentChannelCommand) GetPaymentHash() []byte {
+	if m != nil {
+		return m.PaymentHash
+	}
+	return nil
+}
+
+func (m *RentChannelCommand) GetPayingCurrency() string {
+	if m != nil {
+		return m.PayingCurrency
+	}
+	return ""
+}
+
+func (m *RentChannelCommand) GetNodePublicKey() []byte {
+	if m != nil {
+		return m.NodePublicKey
+	}
+	return nil
+}
+
+// Event for RentChannelCommand
+type RentChannelResponse struct {
+	ChannelId            string   `protobuf:"bytes,1,opt,name=channelId,proto3" json:"channelId,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RentChannelResponse) Reset()         { *m = RentChannelResponse{} }
+func (m *RentChannelResponse) String() string { return proto.CompactTextString(m) }
+func (*RentChannelResponse) ProtoMessage()    {}
+func (*RentChannelResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_197ef81533ed7ae1, []int{28}
+}
+
+func (m *RentChannelResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RentChannelResponse.Unmarshal(m, b)
+}
+func (m *RentChannelResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RentChannelResponse.Marshal(b, m, deterministic)
+}
+func (m *RentChannelResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RentChannelResponse.Merge(m, src)
+}
+func (m *RentChannelResponse) XXX_Size() int {
+	return xxx_messageInfo_RentChannelResponse.Size(m)
+}
+func (m *RentChannelResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_RentChannelResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RentChannelResponse proto.InternalMessageInfo
+
+func (m *RentChannelResponse) GetChannelId() string {
+	if m != nil {
+		return m.ChannelId
+	}
+	return ""
+}
+
+// Command to know the status of a channel.
+type GetChannelStatusCommand struct {
+	ChannelId            string   `protobuf:"bytes,1,opt,name=channelId,proto3" json:"channelId,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetChannelStatusCommand) Reset()         { *m = GetChannelStatusCommand{} }
+func (m *GetChannelStatusCommand) String() string { return proto.CompactTextString(m) }
+func (*GetChannelStatusCommand) ProtoMessage()    {}
+func (*GetChannelStatusCommand) Descriptor() ([]byte, []int) {
+	return fileDescriptor_197ef81533ed7ae1, []int{29}
+}
+
+func (m *GetChannelStatusCommand) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetChannelStatusCommand.Unmarshal(m, b)
+}
+func (m *GetChannelStatusCommand) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetChannelStatusCommand.Marshal(b, m, deterministic)
+}
+func (m *GetChannelStatusCommand) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetChannelStatusCommand.Merge(m, src)
+}
+func (m *GetChannelStatusCommand) XXX_Size() int {
+	return xxx_messageInfo_GetChannelStatusCommand.Size(m)
+}
+func (m *GetChannelStatusCommand) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetChannelStatusCommand.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetChannelStatusCommand proto.InternalMessageInfo
+
+func (m *GetChannelStatusCommand) GetChannelId() string {
+	if m != nil {
+		return m.ChannelId
+	}
+	return ""
+}
+
+// Event for GetChannelStatusCommand
+type GetChannelStatusResponse struct {
+	Status               string   `protobuf:"bytes,1,opt,name=status,proto3" json:"status,omitempty"`
+	ExpiresAt            int64    `protobuf:"varint,2,opt,name=expiresAt,proto3" json:"expiresAt,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetChannelStatusResponse) Reset()         { *m = GetChannelStatusResponse{} }
+func (m *GetChannelStatusResponse) String() string { return proto.CompactTextString(m) }
+func (*GetChannelStatusResponse) ProtoMessage()    {}
+func (*GetChannelStatusResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_197ef81533ed7ae1, []int{30}
+}
+
+func (m *GetChannelStatusResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetChannelStatusResponse.Unmarshal(m, b)
+}
+func (m *GetChannelStatusResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetChannelStatusResponse.Marshal(b, m, deterministic)
+}
+func (m *GetChannelStatusResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetChannelStatusResponse.Merge(m, src)
+}
+func (m *GetChannelStatusResponse) XXX_Size() int {
+	return xxx_messageInfo_GetChannelStatusResponse.Size(m)
+}
+func (m *GetChannelStatusResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetChannelStatusResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetChannelStatusResponse proto.InternalMessageInfo
+
+func (m *GetChannelStatusResponse) GetStatus() string {
+	if m != nil {
+		return m.Status
+	}
+	return ""
+}
+
+func (m *GetChannelStatusResponse) GetExpiresAt() int64 {
+	if m != nil {
+		return m.ExpiresAt
+	}
+	return 0
+}
+
+// The command to calculate the fee to rent a channel
+type GetFeeToRentChannelCommand struct {
+	Currency             string      `protobuf:"bytes,1,opt,name=currency,proto3" json:"currency,omitempty"`
+	PayingCurrency       string      `protobuf:"bytes,2,opt,name=payingCurrency,proto3" json:"payingCurrency,omitempty"`
+	Capacity             *BigInteger `protobuf:"bytes,3,opt,name=capacity,proto3" json:"capacity,omitempty"`
+	LifetimeSeconds      int64       `protobuf:"varint,4,opt,name=lifetimeSeconds,proto3" json:"lifetimeSeconds,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
+	XXX_unrecognized     []byte      `json:"-"`
+	XXX_sizecache        int32       `json:"-"`
+}
+
+func (m *GetFeeToRentChannelCommand) Reset()         { *m = GetFeeToRentChannelCommand{} }
+func (m *GetFeeToRentChannelCommand) String() string { return proto.CompactTextString(m) }
+func (*GetFeeToRentChannelCommand) ProtoMessage()    {}
+func (*GetFeeToRentChannelCommand) Descriptor() ([]byte, []int) {
+	return fileDescriptor_197ef81533ed7ae1, []int{31}
+}
+
+func (m *GetFeeToRentChannelCommand) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetFeeToRentChannelCommand.Unmarshal(m, b)
+}
+func (m *GetFeeToRentChannelCommand) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetFeeToRentChannelCommand.Marshal(b, m, deterministic)
+}
+func (m *GetFeeToRentChannelCommand) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetFeeToRentChannelCommand.Merge(m, src)
+}
+func (m *GetFeeToRentChannelCommand) XXX_Size() int {
+	return xxx_messageInfo_GetFeeToRentChannelCommand.Size(m)
+}
+func (m *GetFeeToRentChannelCommand) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetFeeToRentChannelCommand.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetFeeToRentChannelCommand proto.InternalMessageInfo
+
+func (m *GetFeeToRentChannelCommand) GetCurrency() string {
+	if m != nil {
+		return m.Currency
+	}
+	return ""
+}
+
+func (m *GetFeeToRentChannelCommand) GetPayingCurrency() string {
+	if m != nil {
+		return m.PayingCurrency
+	}
+	return ""
+}
+
+func (m *GetFeeToRentChannelCommand) GetCapacity() *BigInteger {
+	if m != nil {
+		return m.Capacity
+	}
+	return nil
+}
+
+func (m *GetFeeToRentChannelCommand) GetLifetimeSeconds() int64 {
+	if m != nil {
+		return m.LifetimeSeconds
+	}
+	return 0
+}
+
+// Event for GenerateInvoiceToRentChannelCommand
+type GetFeeToRentChannelResponse struct {
+	Fee                  *BigInteger `protobuf:"bytes,1,opt,name=fee,proto3" json:"fee,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
+	XXX_unrecognized     []byte      `json:"-"`
+	XXX_sizecache        int32       `json:"-"`
+}
+
+func (m *GetFeeToRentChannelResponse) Reset()         { *m = GetFeeToRentChannelResponse{} }
+func (m *GetFeeToRentChannelResponse) String() string { return proto.CompactTextString(m) }
+func (*GetFeeToRentChannelResponse) ProtoMessage()    {}
+func (*GetFeeToRentChannelResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_197ef81533ed7ae1, []int{32}
+}
+
+func (m *GetFeeToRentChannelResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetFeeToRentChannelResponse.Unmarshal(m, b)
+}
+func (m *GetFeeToRentChannelResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetFeeToRentChannelResponse.Marshal(b, m, deterministic)
+}
+func (m *GetFeeToRentChannelResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetFeeToRentChannelResponse.Merge(m, src)
+}
+func (m *GetFeeToRentChannelResponse) XXX_Size() int {
+	return xxx_messageInfo_GetFeeToRentChannelResponse.Size(m)
+}
+func (m *GetFeeToRentChannelResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetFeeToRentChannelResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetFeeToRentChannelResponse proto.InternalMessageInfo
+
+func (m *GetFeeToRentChannelResponse) GetFee() *BigInteger {
+	if m != nil {
+		return m.Fee
+	}
+	return nil
+}
+
 func init() {
 	proto.RegisterEnum("lssdrpc.OrderSide", OrderSide_name, OrderSide_value)
 	proto.RegisterEnum("lssdrpc.SwapSuccess_Role", SwapSuccess_Role_name, SwapSuccess_Role_value)
 	proto.RegisterType((*BigInteger)(nil), "lssdrpc.BigInteger")
 	proto.RegisterType((*AddCurrencyRequest)(nil), "lssdrpc.AddCurrencyRequest")
 	proto.RegisterType((*AddCurrencyResponse)(nil), "lssdrpc.AddCurrencyResponse")
+	proto.RegisterType((*GetAddedCurrenciesRequest)(nil), "lssdrpc.GetAddedCurrenciesRequest")
+	proto.RegisterType((*GetAddedCurrenciesResponse)(nil), "lssdrpc.GetAddedCurrenciesResponse")
 	proto.RegisterType((*EnableTradingPairRequest)(nil), "lssdrpc.EnableTradingPairRequest")
 	proto.RegisterType((*EnableTradingPairResponse)(nil), "lssdrpc.EnableTradingPairResponse")
+	proto.RegisterType((*GetActiveTradingPairRequest)(nil), "lssdrpc.GetActiveTradingPairRequest")
+	proto.RegisterType((*GetActiveTradingPairResponse)(nil), "lssdrpc.GetActiveTradingPairResponse")
 	proto.RegisterType((*ListOrdersRequest)(nil), "lssdrpc.ListOrdersRequest")
 	proto.RegisterType((*ListOrdersResponse)(nil), "lssdrpc.ListOrdersResponse")
 	proto.RegisterType((*PlaceOrderRequest)(nil), "lssdrpc.PlaceOrderRequest")
@@ -1332,91 +1951,131 @@ func init() {
 	proto.RegisterType((*SubscribeOrdersRequest)(nil), "lssdrpc.SubscribeOrdersRequest")
 	proto.RegisterType((*OrderUpdate)(nil), "lssdrpc.OrderUpdate")
 	proto.RegisterType((*Order)(nil), "lssdrpc.Order")
+	proto.RegisterType((*OrderPortion)(nil), "lssdrpc.OrderPortion")
 	proto.RegisterType((*SubscribeSwapsRequest)(nil), "lssdrpc.SubscribeSwapsRequest")
 	proto.RegisterType((*SwapResult)(nil), "lssdrpc.SwapResult")
 	proto.RegisterType((*SwapSuccess)(nil), "lssdrpc.SwapSuccess")
 	proto.RegisterType((*SwapFailure)(nil), "lssdrpc.SwapFailure")
+	proto.RegisterType((*GenerateInvoiceToRentChannelCommand)(nil), "lssdrpc.GenerateInvoiceToRentChannelCommand")
+	proto.RegisterType((*GenerateInvoiceToRentChannelResponse)(nil), "lssdrpc.GenerateInvoiceToRentChannelResponse")
+	proto.RegisterType((*RentChannelCommand)(nil), "lssdrpc.RentChannelCommand")
+	proto.RegisterType((*RentChannelResponse)(nil), "lssdrpc.RentChannelResponse")
+	proto.RegisterType((*GetChannelStatusCommand)(nil), "lssdrpc.GetChannelStatusCommand")
+	proto.RegisterType((*GetChannelStatusResponse)(nil), "lssdrpc.GetChannelStatusResponse")
+	proto.RegisterType((*GetFeeToRentChannelCommand)(nil), "lssdrpc.GetFeeToRentChannelCommand")
+	proto.RegisterType((*GetFeeToRentChannelResponse)(nil), "lssdrpc.GetFeeToRentChannelResponse")
 }
 
-func init() { proto.RegisterFile("lssdrpc.proto", fileDescriptor_197ef81533ed7ae1) }
+func init() {
+	proto.RegisterFile("lssdrpc.proto", fileDescriptor_197ef81533ed7ae1)
+}
 
 var fileDescriptor_197ef81533ed7ae1 = []byte{
-	// 1050 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0xb4, 0x57, 0x4f, 0x6f, 0xdc, 0x44,
-	0x14, 0xaf, 0xb3, 0xff, 0x9f, 0x93, 0x65, 0x3b, 0x49, 0x8b, 0xbb, 0x89, 0x42, 0x19, 0xa1, 0xaa,
-	0x54, 0x22, 0x8a, 0xb6, 0x80, 0x90, 0xe0, 0x92, 0x44, 0x09, 0x29, 0x7f, 0xd4, 0x95, 0xb7, 0x70,
-	0xe0, 0xe6, 0xb5, 0x27, 0x89, 0xa9, 0xd7, 0x5e, 0x66, 0xec, 0x46, 0x39, 0xf2, 0x0d, 0xb8, 0xf0,
-	0x01, 0x38, 0x22, 0x71, 0xe2, 0xc6, 0x37, 0xe1, 0x8b, 0x70, 0x67, 0xfe, 0xd9, 0x1e, 0xc7, 0xde,
-	0x6c, 0x39, 0x70, 0xf3, 0x7b, 0xef, 0x37, 0x6f, 0xde, 0xff, 0x37, 0x86, 0xad, 0x88, 0xb1, 0x80,
-	0x2e, 0xfd, 0x83, 0x25, 0x4d, 0xd2, 0x04, 0xf5, 0x34, 0x89, 0x31, 0xc0, 0x71, 0x78, 0xf9, 0x22,
-	0x4e, 0xc9, 0x25, 0xa1, 0x68, 0x07, 0x3a, 0x6f, 0xbc, 0x28, 0x23, 0x8e, 0xf5, 0xd8, 0x7a, 0x3a,
-	0x70, 0x15, 0x81, 0x7f, 0xb5, 0x00, 0x1d, 0x05, 0xc1, 0x49, 0x46, 0x29, 0x89, 0xfd, 0x1b, 0x97,
-	0xfc, 0x94, 0x11, 0x96, 0xa2, 0x31, 0xf4, 0x7d, 0xcd, 0xd2, 0xf8, 0x82, 0x46, 0xfb, 0x00, 0x51,
-	0x1c, 0x9c, 0x5c, 0x79, 0x71, 0x4c, 0x22, 0x67, 0x43, 0x4a, 0x0d, 0x0e, 0xda, 0xe3, 0x67, 0x09,
-	0x4d, 0xa7, 0x5e, 0x7a, 0xe5, 0xb4, 0x84, 0xf4, 0xfc, 0x9e, 0x5b, 0x70, 0xb8, 0xe6, 0x1e, 0xf5,
-	0xae, 0x4f, 0x38, 0xe9, 0xb4, 0xb5, 0x30, 0x67, 0x1c, 0x0f, 0xa0, 0x97, 0x46, 0x4c, 0x7c, 0xe2,
-	0x07, 0xb0, 0x5d, 0x31, 0x8b, 0x2d, 0x93, 0x98, 0x11, 0x3c, 0x01, 0xe7, 0x34, 0xf6, 0xe6, 0x11,
-	0x79, 0x45, 0xbd, 0x20, 0x8c, 0x2f, 0xa7, 0x5e, 0x48, 0x73, 0x9b, 0x1f, 0x42, 0x77, 0xc9, 0xc9,
-	0x17, 0x81, 0xb6, 0x58, 0x53, 0x78, 0x17, 0x1e, 0x35, 0x9c, 0xd1, 0x0a, 0x7f, 0xb6, 0xe0, 0xfe,
-	0x37, 0x21, 0x4b, 0x5f, 0xd2, 0x80, 0x50, 0xb6, 0x46, 0x15, 0x7a, 0x06, 0xa3, 0x30, 0xf6, 0xa3,
-	0x2c, 0x20, 0x2f, 0xaf, 0x63, 0x75, 0x44, 0x06, 0xa0, 0xef, 0xd6, 0xf8, 0x08, 0x41, 0x9b, 0xbd,
-	0x0e, 0x97, 0x32, 0x04, 0x5b, 0xae, 0xfc, 0x16, 0x39, 0x88, 0xc2, 0x45, 0xa8, 0x5c, 0xdf, 0x72,
-	0x15, 0x81, 0xbf, 0x00, 0x64, 0x9a, 0xa0, 0x2c, 0x43, 0x4f, 0xa0, 0x9b, 0xa8, 0x1b, 0xac, 0xc7,
-	0xad, 0xa7, 0xf6, 0x64, 0x78, 0x90, 0xa7, 0x59, 0x02, 0x5d, 0x2d, 0xc5, 0xbf, 0x73, 0x0f, 0xa6,
-	0x91, 0xe7, 0x13, 0xc5, 0x5e, 0xe3, 0xc1, 0x13, 0x6e, 0x55, 0x18, 0x10, 0x69, 0xf5, 0x70, 0x82,
-	0xaa, 0x3a, 0x67, 0x5c, 0xe2, 0x4a, 0x39, 0xfa, 0x10, 0x3a, 0x17, 0x59, 0x1c, 0x30, 0x69, 0xbe,
-	0x3d, 0xd9, 0x2e, 0x80, 0x65, 0x45, 0xb9, 0x0a, 0x21, 0xa0, 0x4b, 0x1a, 0xfa, 0x44, 0x3a, 0xb5,
-	0x0a, 0x2a, 0x11, 0xf8, 0x2f, 0x5e, 0x6d, 0xa6, 0xad, 0xda, 0xd5, 0xcf, 0xc0, 0x66, 0xd7, 0xde,
-	0x72, 0x96, 0xf9, 0x3e, 0x61, 0x4c, 0x5a, 0x6c, 0x4f, 0x76, 0x0a, 0x3d, 0xb3, 0x52, 0xc6, 0xab,
-	0xc5, 0x84, 0x72, 0x77, 0x3a, 0x32, 0x0c, 0xd2, 0x9f, 0x5a, 0x8c, 0x38, 0x5a, 0x89, 0xd1, 0xa7,
-	0xd0, 0xbb, 0xf0, 0xc2, 0x28, 0xa3, 0x44, 0x3b, 0x34, 0x2e, 0x90, 0xa5, 0x3d, 0x67, 0x0a, 0x21,
-	0x2a, 0x52, 0x83, 0x45, 0x45, 0x26, 0x59, 0xea, 0x27, 0x0b, 0x82, 0xff, 0xb4, 0x60, 0x24, 0x61,
-	0xf3, 0x24, 0x79, 0xad, 0xa1, 0x2b, 0xc3, 0x5c, 0x84, 0x6f, 0x63, 0x6d, 0xf8, 0x3e, 0x80, 0x2d,
-	0x7d, 0x9b, 0x4b, 0x3c, 0x96, 0xc4, 0xaa, 0x67, 0xdc, 0x2a, 0x13, 0x7d, 0x02, 0x36, 0xe5, 0xa9,
-	0x0d, 0x29, 0x09, 0xce, 0xc8, 0x9d, 0xa1, 0x36, 0x71, 0xf8, 0xb7, 0x4a, 0x71, 0xe4, 0x56, 0xeb,
-	0x78, 0x6b, 0xb2, 0x31, 0xde, 0x65, 0x2c, 0x4c, 0x28, 0xfa, 0x12, 0x46, 0xc9, 0xad, 0x18, 0x68,
-	0x17, 0x1f, 0x55, 0x43, 0x6f, 0x00, 0xb8, 0x8e, 0xda, 0x21, 0x11, 0x58, 0xed, 0x20, 0x3e, 0x03,
-	0x74, 0xe2, 0xc5, 0x3e, 0x89, 0xde, 0xaa, 0x80, 0x1d, 0x9e, 0x11, 0x81, 0xe3, 0x02, 0x35, 0x7a,
-	0x72, 0x52, 0x8c, 0x8c, 0x8a, 0x1e, 0xdd, 0xe1, 0x0e, 0x3c, 0x9c, 0x65, 0x73, 0xe6, 0xd3, 0x70,
-	0x4e, 0x2a, 0x5d, 0x8e, 0x33, 0xb0, 0x25, 0xe3, 0xbb, 0x65, 0xe0, 0xa5, 0xa4, 0xac, 0x25, 0xeb,
-	0xee, 0x5a, 0xfa, 0x18, 0x36, 0x13, 0x75, 0xc3, 0x22, 0xe1, 0x43, 0x74, 0x65, 0xe9, 0x55, 0x50,
-	0xc7, 0x7d, 0xe8, 0x66, 0xf2, 0x1e, 0xfc, 0x8f, 0x05, 0x1d, 0x89, 0xf9, 0xef, 0x3e, 0x96, 0xbd,
-	0xd6, 0x5a, 0xd7, 0x6b, 0x65, 0x09, 0xb6, 0xd7, 0x96, 0xe0, 0x1e, 0x0c, 0x7c, 0x4a, 0xb8, 0x6d,
-	0xc1, 0x51, 0xea, 0x74, 0x38, 0xbc, 0xed, 0x96, 0x8c, 0x62, 0x64, 0x74, 0xd7, 0x8c, 0x0c, 0xbe,
-	0x17, 0x42, 0x96, 0xcf, 0x3f, 0xa7, 0x27, 0xc7, 0xa2, 0xc1, 0xc1, 0xef, 0xc2, 0x83, 0x22, 0x11,
-	0xa2, 0xc4, 0x8a, 0x3c, 0xdc, 0x00, 0x08, 0x9a, 0x67, 0x2c, 0x8b, 0x52, 0x74, 0x08, 0x3d, 0xf6,
-	0x56, 0x83, 0x20, 0x87, 0x89, 0x13, 0x17, 0x95, 0x5a, 0x5c, 0x55, 0xca, 0x45, 0x5b, 0xf7, 0xf4,
-	0x2e, 0xc4, 0x7f, 0xb7, 0xc0, 0x36, 0xb4, 0x9a, 0x91, 0xb7, 0xaa, 0x91, 0x2f, 0x73, 0xb5, 0xd1,
-	0xdc, 0xe9, 0xeb, 0x07, 0x25, 0x9f, 0xfe, 0xf4, 0xdc, 0x63, 0x57, 0x6a, 0xf1, 0xb9, 0x8a, 0x40,
-	0x9f, 0xc3, 0xd0, 0x5b, 0x24, 0x59, 0x9c, 0xba, 0xc4, 0x27, 0xe1, 0x1b, 0x12, 0xc8, 0x0c, 0xac,
-	0xd0, 0x74, 0x0b, 0x8a, 0x9e, 0x03, 0x28, 0xce, 0x8c, 0xc4, 0xa9, 0xcc, 0xd0, 0x8a, 0x83, 0x06,
-	0x0c, 0x7d, 0x04, 0x6d, 0x9a, 0x44, 0x44, 0xa6, 0x68, 0x68, 0x34, 0xae, 0x11, 0x88, 0x03, 0x97,
-	0x03, 0x5c, 0x09, 0x13, 0x4b, 0xcf, 0x2f, 0xf6, 0xb0, 0x36, 0xb1, 0x2f, 0x3d, 0xa8, 0xf1, 0x11,
-	0x86, 0xcd, 0x9c, 0x27, 0x2d, 0x1a, 0x48, 0x5c, 0x85, 0x27, 0xaa, 0x8d, 0x4e, 0x29, 0x09, 0x17,
-	0xde, 0x25, 0x71, 0x40, 0x02, 0x4a, 0x46, 0x59, 0xe1, 0xf6, 0xda, 0x6d, 0xb2, 0x07, 0x6d, 0x61,
-	0x26, 0x1a, 0x40, 0xe7, 0xd5, 0xd1, 0xd7, 0xa7, 0xee, 0xe8, 0x9e, 0xf8, 0xfc, 0x56, 0x7e, 0x5a,
-	0xf8, 0x17, 0x4b, 0xa5, 0x36, 0x1f, 0x5d, 0xff, 0x6b, 0x6a, 0x6b, 0x43, 0xbc, 0xdd, 0x30, 0xc4,
-	0x9f, 0xed, 0xc3, 0xa0, 0x68, 0x1a, 0xd4, 0x83, 0xd6, 0x3c, 0xbb, 0xe1, 0x36, 0xf7, 0x79, 0x7f,
-	0x91, 0x28, 0x1a, 0x59, 0x93, 0xef, 0x01, 0x74, 0xa4, 0x42, 0xc2, 0xd0, 0x39, 0xd8, 0xc6, 0x13,
-	0x08, 0xed, 0x16, 0xd7, 0xd7, 0xdf, 0x6b, 0xe3, 0xbd, 0x66, 0xa1, 0x1a, 0x81, 0x93, 0x1f, 0x61,
-	0x33, 0x2d, 0xdf, 0x3e, 0x0c, 0xfd, 0x00, 0xf7, 0x6b, 0x2f, 0x22, 0xf4, 0x7e, 0xa1, 0x62, 0xd5,
-	0x0b, 0x6b, 0x8c, 0xef, 0x82, 0xe8, 0xbb, 0xfe, 0xd8, 0xc8, 0xdf, 0x2d, 0xe8, 0x14, 0xa0, 0xdc,
-	0x3d, 0xa8, 0x69, 0xe3, 0xe6, 0x8a, 0x77, 0x1b, 0x65, 0xfa, 0x75, 0xc0, 0xe3, 0x60, 0xcc, 0x75,
-	0x23, 0x0e, 0xf5, 0xad, 0x61, 0xc4, 0xa1, 0x61, 0x15, 0xa0, 0xaf, 0xe0, 0x9d, 0x5b, 0xab, 0x00,
-	0xbd, 0x57, 0x56, 0x7f, 0xe3, 0x92, 0x18, 0xef, 0x54, 0xe7, 0x9d, 0xda, 0x15, 0x87, 0x96, 0x70,
-	0xae, 0x7c, 0xb4, 0x19, 0xce, 0xd5, 0x1e, 0x93, 0x86, 0x73, 0xf5, 0x57, 0xde, 0x64, 0x0a, 0x1d,
-	0xb1, 0x5f, 0x19, 0xdf, 0xac, 0xc3, 0xea, 0x74, 0x44, 0xfb, 0x75, 0xd3, 0xcc, 0xb1, 0x39, 0xde,
-	0xae, 0x34, 0xae, 0x9a, 0x9e, 0x87, 0xd6, 0xbc, 0x2b, 0xff, 0x02, 0x9e, 0xff, 0x1b, 0x00, 0x00,
-	0xff, 0xff, 0xfa, 0xb4, 0x4d, 0x9c, 0x16, 0x0c, 0x00, 0x00,
+	// 1514 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0xd4, 0x58, 0xcd, 0x6f, 0xdc, 0x44,
+	0x14, 0xaf, 0xb3, 0x5f, 0xd9, 0xb7, 0x49, 0x9a, 0x4e, 0xd2, 0x76, 0xbb, 0x09, 0xa5, 0x9d, 0xa6,
+	0x55, 0x29, 0xb4, 0x54, 0x5b, 0x28, 0x95, 0xe0, 0x92, 0x86, 0x7e, 0x51, 0xa0, 0x2b, 0x6f, 0x2b,
+	0x24, 0x24, 0x24, 0xbc, 0xf6, 0x24, 0xb5, 0xea, 0xb5, 0x8d, 0xc7, 0x6e, 0xd9, 0x23, 0x12, 0x17,
+	0x6e, 0x5c, 0xf8, 0x03, 0x38, 0x22, 0x71, 0x42, 0xe2, 0x80, 0xb8, 0x72, 0xef, 0x95, 0x3f, 0x87,
+	0xf9, 0xb2, 0x3d, 0x5e, 0x7b, 0xbd, 0xe1, 0xc0, 0x81, 0xdb, 0xce, 0x7b, 0xbf, 0x79, 0x7e, 0xdf,
+	0xf3, 0xde, 0xc2, 0xba, 0x47, 0xa9, 0x13, 0x85, 0xf6, 0x8d, 0x30, 0x0a, 0xe2, 0x00, 0x75, 0xd4,
+	0x11, 0x63, 0x80, 0xbb, 0xee, 0xd1, 0x23, 0x3f, 0x26, 0x47, 0x24, 0x42, 0xdb, 0xd0, 0x7a, 0x69,
+	0x79, 0x09, 0xe9, 0x1b, 0x17, 0x8c, 0xab, 0x5d, 0x53, 0x1e, 0xf0, 0x4f, 0x06, 0xa0, 0x7d, 0xc7,
+	0x39, 0x48, 0xa2, 0x88, 0xf8, 0xf6, 0xcc, 0x24, 0xdf, 0x24, 0x84, 0xc6, 0x68, 0x00, 0xab, 0xb6,
+	0x22, 0x29, 0x7c, 0x76, 0x46, 0xe7, 0x01, 0x3c, 0xdf, 0x39, 0x78, 0x6e, 0xf9, 0x3e, 0xf1, 0xfa,
+	0x2b, 0x82, 0xab, 0x51, 0xd0, 0x2e, 0xbb, 0x4b, 0xa2, 0x78, 0x64, 0xc5, 0xcf, 0xfb, 0x0d, 0xce,
+	0x7d, 0x78, 0xc2, 0xcc, 0x28, 0x4c, 0x72, 0x27, 0xb2, 0x5e, 0x1d, 0xb0, 0x63, 0xbf, 0xa9, 0x98,
+	0x29, 0xe1, 0x6e, 0x17, 0x3a, 0xb1, 0x47, 0xf9, 0x4f, 0x7c, 0x1a, 0xb6, 0x0a, 0x6a, 0xd1, 0x30,
+	0xf0, 0x29, 0xc1, 0x3b, 0x70, 0xee, 0x01, 0x89, 0x19, 0x87, 0xa4, 0x3c, 0x97, 0x50, 0xa5, 0x34,
+	0xbe, 0x03, 0x83, 0x2a, 0xa6, 0xbc, 0x3a, 0x67, 0x52, 0x43, 0x37, 0x09, 0x0f, 0xa1, 0x7f, 0xcf,
+	0xb7, 0x26, 0x1e, 0x79, 0x1a, 0x59, 0x8e, 0xeb, 0x1f, 0x8d, 0x2c, 0x37, 0x4a, 0x5d, 0x71, 0x06,
+	0xda, 0x21, 0x3b, 0x3e, 0x72, 0x94, 0x23, 0xd4, 0x89, 0xab, 0x52, 0x71, 0x47, 0xe9, 0xf9, 0x06,
+	0xec, 0x70, 0x55, 0xec, 0xd8, 0x7d, 0x59, 0x21, 0x13, 0xdf, 0x86, 0xdd, 0x6a, 0xb6, 0xd2, 0x55,
+	0xff, 0x66, 0x43, 0xfb, 0xe6, 0x77, 0x06, 0x9c, 0xfa, 0xd4, 0xa5, 0xf1, 0x93, 0xc8, 0x21, 0x11,
+	0x5d, 0xa2, 0x21, 0xba, 0x06, 0x9b, 0xae, 0x6f, 0x7b, 0x89, 0x43, 0x9e, 0xbc, 0xf2, 0xe5, 0x15,
+	0x11, 0xae, 0x55, 0xb3, 0x44, 0x47, 0x08, 0x9a, 0xf4, 0x85, 0x1b, 0x8a, 0x80, 0xad, 0x9b, 0xe2,
+	0x37, 0xcf, 0x18, 0xcf, 0x9d, 0xba, 0x32, 0x50, 0xeb, 0xa6, 0x3c, 0xe0, 0x8f, 0x00, 0xe9, 0x2a,
+	0x28, 0x8d, 0xaf, 0x40, 0x3b, 0x90, 0x5f, 0xe0, 0x1a, 0xf7, 0x86, 0x1b, 0x37, 0xd2, 0xa4, 0x14,
+	0x40, 0x53, 0x71, 0xf1, 0x2f, 0xcc, 0x82, 0x91, 0x67, 0xd9, 0x44, 0x92, 0x97, 0x58, 0x70, 0x85,
+	0x69, 0xe5, 0x3a, 0x44, 0x68, 0xbd, 0x31, 0x44, 0x45, 0x99, 0x63, 0xc6, 0x31, 0x05, 0x1f, 0xbd,
+	0x05, 0xad, 0xc3, 0xc4, 0x77, 0xa8, 0x50, 0xbf, 0x37, 0xdc, 0xca, 0x80, 0x79, 0xfe, 0x9b, 0x12,
+	0xc1, 0xa1, 0x61, 0xe4, 0xda, 0x44, 0x18, 0xb5, 0x08, 0x2a, 0x10, 0xf8, 0x0f, 0x56, 0x1b, 0xba,
+	0xae, 0xca, 0xd4, 0x3b, 0xd0, 0xa3, 0xaf, 0xac, 0x70, 0x9c, 0xd8, 0x36, 0xa1, 0x54, 0x68, 0xdc,
+	0x1b, 0x6e, 0x67, 0x72, 0xc6, 0x39, 0x8f, 0xe5, 0xb6, 0x0e, 0x65, 0xe6, 0xb4, 0x84, 0x1b, 0x84,
+	0x3d, 0x25, 0x1f, 0x31, 0xb4, 0x64, 0xa3, 0xdb, 0xd0, 0x39, 0xb4, 0x5c, 0x2f, 0x89, 0x88, 0x32,
+	0x68, 0x90, 0x21, 0x73, 0x7d, 0xee, 0x4b, 0x04, 0xaf, 0x1f, 0x05, 0xe6, 0xf5, 0x13, 0x24, 0xb1,
+	0x1d, 0x4c, 0x09, 0xfe, 0xcd, 0x80, 0x4d, 0x01, 0x9b, 0x04, 0xc1, 0x0b, 0x05, 0x5d, 0xe8, 0xe6,
+	0xcc, 0x7d, 0x2b, 0x4b, 0xdd, 0xb7, 0x07, 0xeb, 0xea, 0x6b, 0x26, 0xb1, 0x68, 0xe0, 0xcb, 0x0a,
+	0x37, 0x8b, 0x44, 0xf4, 0x3e, 0xf4, 0x22, 0x16, 0x5a, 0x37, 0x22, 0xce, 0x7d, 0x52, 0xeb, 0x6a,
+	0x1d, 0x87, 0x7f, 0x2e, 0x24, 0x47, 0xaa, 0xb5, 0xf2, 0xb7, 0x3a, 0x56, 0xfa, 0x3b, 0xf7, 0x85,
+	0x0e, 0x45, 0x0f, 0x60, 0x33, 0x98, 0xf3, 0x81, 0x32, 0xf1, 0x5c, 0xd1, 0xf5, 0x1a, 0x80, 0xc9,
+	0x28, 0x5d, 0xe2, 0x8e, 0x55, 0x06, 0xe2, 0xfb, 0x80, 0x0e, 0x2c, 0xdf, 0x26, 0xde, 0xb1, 0x12,
+	0xb8, 0xcf, 0x22, 0xc2, 0x71, 0x8c, 0x21, 0x1b, 0x65, 0x7a, 0xe4, 0x0d, 0xae, 0x20, 0x47, 0x35,
+	0x8e, 0x3e, 0x9c, 0x19, 0x27, 0x13, 0x6a, 0x47, 0xee, 0x84, 0x14, 0xaa, 0x1c, 0xff, 0x6e, 0x40,
+	0x4f, 0x50, 0x9e, 0x85, 0x8e, 0x15, 0x13, 0x74, 0x13, 0x40, 0xc8, 0x12, 0xfd, 0x4e, 0x79, 0xa5,
+	0x9c, 0x51, 0x1a, 0x06, 0xbd, 0x07, 0x6b, 0x81, 0xfc, 0xd8, 0x34, 0x60, 0xdd, 0x7f, 0x61, 0x16,
+	0x16, 0x50, 0xd9, 0x2d, 0xde, 0xde, 0x8f, 0xd8, 0x97, 0x1a, 0xb5, 0xb7, 0x14, 0xea, 0xee, 0x2a,
+	0xb4, 0x13, 0xa1, 0x27, 0x7e, 0xbd, 0x02, 0x2d, 0x81, 0xf9, 0xf7, 0x4e, 0xca, 0x8b, 0xb5, 0xb1,
+	0xac, 0x58, 0xf3, 0x1c, 0x6e, 0x2e, 0xcd, 0xe1, 0x5d, 0xe8, 0xda, 0x11, 0x61, 0xba, 0x39, 0xfb,
+	0x71, 0xbf, 0xc5, 0xe0, 0x4d, 0x33, 0x27, 0x64, 0x3d, 0xa7, 0xbd, 0xa4, 0xe7, 0xb0, 0x67, 0xd0,
+	0xa5, 0x69, 0x03, 0xed, 0x77, 0x44, 0x5f, 0xd5, 0x28, 0x4c, 0xa1, 0x66, 0x10, 0x12, 0xbf, 0xbf,
+	0x2a, 0xfa, 0xe1, 0xe9, 0xa2, 0x9c, 0x51, 0x10, 0xc5, 0x6e, 0xe0, 0x9b, 0x02, 0x82, 0xae, 0x43,
+	0xdb, 0xf6, 0x02, 0xca, 0x9c, 0xdb, 0xad, 0x03, 0x2b, 0x10, 0x7e, 0x06, 0x6b, 0x3a, 0x5d, 0xf7,
+	0x9f, 0x51, 0xf4, 0xdf, 0xdb, 0xd0, 0xb6, 0xa6, 0x41, 0xe2, 0xc7, 0x75, 0x95, 0xad, 0x20, 0xf8,
+	0x2c, 0x9c, 0xce, 0x52, 0x8f, 0x17, 0x55, 0x96, 0x79, 0x33, 0x00, 0x7e, 0x66, 0x39, 0x9a, 0x78,
+	0x31, 0xcb, 0xbb, 0x0e, 0x3d, 0x56, 0xeb, 0x4b, 0x61, 0xfc, 0xc6, 0x61, 0xa1, 0xfa, 0x16, 0x15,
+	0x6f, 0xd6, 0xc8, 0x3a, 0x6a, 0x56, 0xc1, 0x7f, 0x37, 0xa0, 0xa7, 0x49, 0xad, 0x31, 0x35, 0x4f,
+	0xae, 0x95, 0xea, 0xde, 0xb6, 0xfc, 0x69, 0x60, 0xef, 0x5d, 0xf4, 0xd0, 0xa2, 0xcf, 0xe5, 0x60,
+	0x62, 0xca, 0x03, 0xfa, 0x10, 0x36, 0xa4, 0x83, 0x4c, 0x62, 0x13, 0xf6, 0x5e, 0x3b, 0x22, 0x65,
+	0x16, 0x48, 0x9a, 0x83, 0xa2, 0x5b, 0x00, 0x92, 0x32, 0x26, 0x2c, 0x08, 0xed, 0xc5, 0x17, 0x35,
+	0x18, 0x4b, 0x87, 0x66, 0x14, 0x78, 0x44, 0xe4, 0xd4, 0x86, 0xd6, 0xaa, 0x34, 0x47, 0xdc, 0x30,
+	0x19, 0xc0, 0x14, 0x30, 0xfe, 0xcc, 0xdb, 0xd9, 0x9c, 0xa4, 0x54, 0x5c, 0x15, 0x16, 0x94, 0xe8,
+	0x08, 0xc3, 0x5a, 0x4a, 0x13, 0x1a, 0x75, 0x05, 0xae, 0x40, 0xe3, 0xe5, 0x11, 0x8d, 0x22, 0xe2,
+	0x4e, 0xad, 0x23, 0xd2, 0x07, 0x01, 0xc8, 0x09, 0x79, 0x49, 0xf6, 0x96, 0xbe, 0x9f, 0xbb, 0xd0,
+	0xe4, 0x6a, 0xa2, 0x2e, 0xb4, 0x9e, 0xee, 0x3f, 0xbe, 0x67, 0x6e, 0x9e, 0xe0, 0x3f, 0x3f, 0x13,
+	0x3f, 0x0d, 0xfc, 0xa3, 0x21, 0x43, 0x9b, 0x36, 0xeb, 0xff, 0x34, 0xb4, 0xa5, 0x67, 0xab, 0x59,
+	0xf1, 0x6c, 0xe1, 0xbf, 0x0c, 0xb8, 0xf4, 0x80, 0xf8, 0x24, 0x62, 0xad, 0xe0, 0x91, 0xff, 0x32,
+	0x60, 0x46, 0x3c, 0x0d, 0x4c, 0xe6, 0x13, 0x35, 0xda, 0x1e, 0x04, 0xd3, 0xa9, 0xe5, 0x3b, 0xb5,
+	0xd3, 0xf1, 0x15, 0xd8, 0x08, 0xad, 0x19, 0x1b, 0xe8, 0xd2, 0xd9, 0x55, 0x29, 0x3d, 0x47, 0x45,
+	0xef, 0x32, 0x19, 0x56, 0x68, 0xd9, 0x6e, 0x3c, 0xab, 0xd3, 0x3f, 0x03, 0xa1, 0xab, 0x70, 0xd2,
+	0x73, 0x0f, 0x49, 0xec, 0x4e, 0xc9, 0x98, 0xd8, 0x41, 0xda, 0xea, 0x1a, 0xe6, 0x3c, 0x19, 0x7f,
+	0x0e, 0x7b, 0x75, 0x56, 0x68, 0x33, 0x1b, 0x57, 0x6a, 0x4a, 0x78, 0xbe, 0x8a, 0x4a, 0x57, 0xc6,
+	0xcc, 0x51, 0xf1, 0xf7, 0x6c, 0x0e, 0xaa, 0xf0, 0xc2, 0x05, 0xe8, 0x29, 0xa0, 0x28, 0x1a, 0x7e,
+	0x77, 0xcd, 0xd4, 0x49, 0xc7, 0xf6, 0x05, 0x8b, 0x8e, 0x1f, 0x38, 0x64, 0x94, 0x4c, 0x3c, 0xd7,
+	0x7e, 0x4c, 0xa4, 0x43, 0xd6, 0xcc, 0x22, 0x11, 0xdf, 0x82, 0xad, 0x2a, 0x2b, 0x78, 0x37, 0x97,
+	0xa4, 0x2c, 0x73, 0x72, 0x02, 0xfe, 0x00, 0xce, 0xb2, 0x49, 0x5b, 0xdd, 0x19, 0xc7, 0x56, 0x9c,
+	0xd0, 0x54, 0xff, 0xfa, 0x8b, 0x23, 0xe8, 0xcf, 0x5f, 0xd4, 0xc7, 0x73, 0x2a, 0x28, 0xe9, 0x43,
+	0x26, 0x4f, 0x5c, 0x22, 0xf9, 0x36, 0x64, 0xd3, 0x0c, 0xdd, 0x97, 0x1d, 0xb7, 0x61, 0xe6, 0x04,
+	0xfc, 0xa7, 0x21, 0xf6, 0x13, 0x36, 0xe8, 0xfc, 0x1f, 0x93, 0xea, 0x63, 0xb1, 0xd1, 0xcc, 0x2b,
+	0x9f, 0xb9, 0xe4, 0x32, 0x34, 0x0e, 0x49, 0x3a, 0x9c, 0x55, 0x7e, 0x94, 0xf3, 0xaf, 0x9d, 0x87,
+	0x6e, 0xf6, 0x8e, 0xa2, 0x0e, 0x34, 0x26, 0xc9, 0x8c, 0x75, 0x85, 0x55, 0xf6, 0xe4, 0x12, 0xcf,
+	0xdb, 0x34, 0x86, 0x6c, 0xc8, 0x01, 0x3b, 0xdb, 0xdd, 0xd0, 0x43, 0xe8, 0x69, 0x5b, 0x20, 0xda,
+	0xc9, 0xe4, 0x96, 0x57, 0xd6, 0xc1, 0x6e, 0x35, 0x53, 0xe9, 0xf7, 0x15, 0xa0, 0xf2, 0x6e, 0x88,
+	0x70, 0x76, 0x67, 0xe1, 0x56, 0x39, 0xb8, 0x54, 0x8b, 0x91, 0xe2, 0x87, 0xaf, 0x0d, 0x58, 0x8b,
+	0xf3, 0x45, 0x8e, 0xa2, 0x2f, 0xe1, 0x54, 0x69, 0x3b, 0x44, 0x17, 0x33, 0x51, 0x8b, 0xb6, 0xcd,
+	0x01, 0xae, 0x83, 0x28, 0x5b, 0x6c, 0xd8, 0xae, 0xda, 0x1e, 0xd1, 0x5e, 0x41, 0xd3, 0x05, 0xbb,
+	0xe7, 0xe0, 0xf2, 0x12, 0x94, 0xb2, 0xe8, 0xd7, 0x95, 0x74, 0xa3, 0x43, 0xf7, 0x00, 0xf2, 0xa9,
+	0x1c, 0x55, 0xed, 0x22, 0xa9, 0xec, 0x9d, 0x4a, 0x9e, 0x52, 0x9b, 0x05, 0x53, 0x9b, 0x78, 0xb5,
+	0x60, 0x96, 0xe7, 0x69, 0x2d, 0x98, 0x15, 0x43, 0x32, 0xfa, 0x04, 0x4e, 0xce, 0x0d, 0xc9, 0xe8,
+	0xcd, 0xfc, 0x95, 0xac, 0x1c, 0x9f, 0x07, 0xdb, 0xc5, 0x99, 0x4a, 0x0e, 0xd1, 0x37, 0x0d, 0x6e,
+	0x5c, 0xbe, 0xce, 0x6a, 0xc6, 0x95, 0xd6, 0x6c, 0xcd, 0xb8, 0xf2, 0xfe, 0x3b, 0x1c, 0x41, 0x8b,
+	0x6f, 0x1e, 0x94, 0xed, 0x1c, 0x1b, 0xc5, 0x29, 0x0a, 0x9d, 0x2f, 0xab, 0xa6, 0x8f, 0x57, 0x83,
+	0xad, 0xc2, 0x03, 0x2f, 0xa7, 0xac, 0x9b, 0xc6, 0xf0, 0x87, 0x06, 0x74, 0x58, 0x9a, 0xc5, 0x2c,
+	0x30, 0x68, 0xc6, 0x3b, 0x87, 0xec, 0xe8, 0x5a, 0xf1, 0xa9, 0xe6, 0x8e, 0xde, 0xd1, 0x22, 0xba,
+	0xf4, 0xf1, 0x1a, 0x5c, 0x3f, 0x16, 0x5a, 0x8f, 0x9a, 0x46, 0xd6, 0xa2, 0x56, 0x21, 0x7a, 0xb7,
+	0x8a, 0x99, 0x49, 0xfa, 0x02, 0x36, 0xe7, 0x3b, 0x2a, 0xba, 0xa0, 0x27, 0x63, 0x55, 0x97, 0x1e,
+	0x5c, 0x5c, 0x88, 0xc8, 0x04, 0x7f, 0x0d, 0x5b, 0x15, 0xad, 0x09, 0x15, 0x0a, 0x77, 0x41, 0xd7,
+	0x1d, 0xec, 0xd5, 0x81, 0xd2, 0x2f, 0x4c, 0xda, 0xe2, 0x9f, 0xb5, 0x5b, 0xff, 0x04, 0x00, 0x00,
+	0xff, 0xff, 0x40, 0xbf, 0xe1, 0xb9, 0x6a, 0x13, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ context.Context
-var _ grpc.ClientConn
+var _ grpc.ClientConnInterface
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
-const _ = grpc.SupportPackageIsVersion4
+const _ = grpc.SupportPackageIsVersion6
 
 // CurrenciesClient is the client API for Currencies service.
 //
@@ -1427,19 +2086,31 @@ type CurrenciesClient interface {
 	//
 	// For now, only currencies supported by lnd (lightning network) work.
 	AddCurrency(ctx context.Context, in *AddCurrencyRequest, opts ...grpc.CallOption) (*AddCurrencyResponse, error)
+	// Return added currencies, like LTC, before calling this method, you must
+	// have already added some currency
+	GetAddedCurrencies(ctx context.Context, in *GetAddedCurrenciesRequest, opts ...grpc.CallOption) (*GetAddedCurrenciesResponse, error)
 }
 
 type currenciesClient struct {
-	cc *grpc.ClientConn
+	cc grpc.ClientConnInterface
 }
 
-func NewCurrenciesClient(cc *grpc.ClientConn) CurrenciesClient {
+func NewCurrenciesClient(cc grpc.ClientConnInterface) CurrenciesClient {
 	return &currenciesClient{cc}
 }
 
 func (c *currenciesClient) AddCurrency(ctx context.Context, in *AddCurrencyRequest, opts ...grpc.CallOption) (*AddCurrencyResponse, error) {
 	out := new(AddCurrencyResponse)
 	err := c.cc.Invoke(ctx, "/lssdrpc.currencies/AddCurrency", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *currenciesClient) GetAddedCurrencies(ctx context.Context, in *GetAddedCurrenciesRequest, opts ...grpc.CallOption) (*GetAddedCurrenciesResponse, error) {
+	out := new(GetAddedCurrenciesResponse)
+	err := c.cc.Invoke(ctx, "/lssdrpc.currencies/GetAddedCurrencies", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1453,6 +2124,9 @@ type CurrenciesServer interface {
 	//
 	// For now, only currencies supported by lnd (lightning network) work.
 	AddCurrency(context.Context, *AddCurrencyRequest) (*AddCurrencyResponse, error)
+	// Return added currencies, like LTC, before calling this method, you must
+	// have already added some currency
+	GetAddedCurrencies(context.Context, *GetAddedCurrenciesRequest) (*GetAddedCurrenciesResponse, error)
 }
 
 // UnimplementedCurrenciesServer can be embedded to have forward compatible implementations.
@@ -1461,6 +2135,9 @@ type UnimplementedCurrenciesServer struct {
 
 func (*UnimplementedCurrenciesServer) AddCurrency(ctx context.Context, req *AddCurrencyRequest) (*AddCurrencyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddCurrency not implemented")
+}
+func (*UnimplementedCurrenciesServer) GetAddedCurrencies(ctx context.Context, req *GetAddedCurrenciesRequest) (*GetAddedCurrenciesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAddedCurrencies not implemented")
 }
 
 func RegisterCurrenciesServer(s *grpc.Server, srv CurrenciesServer) {
@@ -1485,6 +2162,24 @@ func _Currencies_AddCurrency_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Currencies_GetAddedCurrencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAddedCurrenciesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CurrenciesServer).GetAddedCurrencies(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/lssdrpc.currencies/GetAddedCurrencies",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CurrenciesServer).GetAddedCurrencies(ctx, req.(*GetAddedCurrenciesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Currencies_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "lssdrpc.currencies",
 	HandlerType: (*CurrenciesServer)(nil),
@@ -1492,6 +2187,10 @@ var _Currencies_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "AddCurrency",
 			Handler:    _Currencies_AddCurrency_Handler,
+		},
+		{
+			MethodName: "GetAddedCurrencies",
+			Handler:    _Currencies_GetAddedCurrencies_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -1509,19 +2208,31 @@ type TradingPairsClient interface {
 	// try waiting some seconds (5 should be enough) before performing any other operation, so
 	// that lssd has the time to sync because this is done in the background.
 	EnableTradingPair(ctx context.Context, in *EnableTradingPairRequest, opts ...grpc.CallOption) (*EnableTradingPairResponse, error)
+	// Return current active trading pair, like XSN_LTC, before calling this method, you must
+	// have already added and activated some trading pair
+	GetActiveTradingPair(ctx context.Context, in *GetActiveTradingPairRequest, opts ...grpc.CallOption) (*GetActiveTradingPairResponse, error)
 }
 
 type tradingPairsClient struct {
-	cc *grpc.ClientConn
+	cc grpc.ClientConnInterface
 }
 
-func NewTradingPairsClient(cc *grpc.ClientConn) TradingPairsClient {
+func NewTradingPairsClient(cc grpc.ClientConnInterface) TradingPairsClient {
 	return &tradingPairsClient{cc}
 }
 
 func (c *tradingPairsClient) EnableTradingPair(ctx context.Context, in *EnableTradingPairRequest, opts ...grpc.CallOption) (*EnableTradingPairResponse, error) {
 	out := new(EnableTradingPairResponse)
 	err := c.cc.Invoke(ctx, "/lssdrpc.tradingPairs/EnableTradingPair", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *tradingPairsClient) GetActiveTradingPair(ctx context.Context, in *GetActiveTradingPairRequest, opts ...grpc.CallOption) (*GetActiveTradingPairResponse, error) {
+	out := new(GetActiveTradingPairResponse)
+	err := c.cc.Invoke(ctx, "/lssdrpc.tradingPairs/GetActiveTradingPair", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1537,6 +2248,9 @@ type TradingPairsServer interface {
 	// try waiting some seconds (5 should be enough) before performing any other operation, so
 	// that lssd has the time to sync because this is done in the background.
 	EnableTradingPair(context.Context, *EnableTradingPairRequest) (*EnableTradingPairResponse, error)
+	// Return current active trading pair, like XSN_LTC, before calling this method, you must
+	// have already added and activated some trading pair
+	GetActiveTradingPair(context.Context, *GetActiveTradingPairRequest) (*GetActiveTradingPairResponse, error)
 }
 
 // UnimplementedTradingPairsServer can be embedded to have forward compatible implementations.
@@ -1545,6 +2259,9 @@ type UnimplementedTradingPairsServer struct {
 
 func (*UnimplementedTradingPairsServer) EnableTradingPair(ctx context.Context, req *EnableTradingPairRequest) (*EnableTradingPairResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method EnableTradingPair not implemented")
+}
+func (*UnimplementedTradingPairsServer) GetActiveTradingPair(ctx context.Context, req *GetActiveTradingPairRequest) (*GetActiveTradingPairResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetActiveTradingPair not implemented")
 }
 
 func RegisterTradingPairsServer(s *grpc.Server, srv TradingPairsServer) {
@@ -1569,6 +2286,24 @@ func _TradingPairs_EnableTradingPair_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _TradingPairs_GetActiveTradingPair_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetActiveTradingPairRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TradingPairsServer).GetActiveTradingPair(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/lssdrpc.tradingPairs/GetActiveTradingPair",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TradingPairsServer).GetActiveTradingPair(ctx, req.(*GetActiveTradingPairRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _TradingPairs_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "lssdrpc.tradingPairs",
 	HandlerType: (*TradingPairsServer)(nil),
@@ -1576,6 +2311,10 @@ var _TradingPairs_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "EnableTradingPair",
 			Handler:    _TradingPairs_EnableTradingPair_Handler,
+		},
+		{
+			MethodName: "GetActiveTradingPair",
+			Handler:    _TradingPairs_GetActiveTradingPair_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -1600,10 +2339,10 @@ type OrdersClient interface {
 }
 
 type ordersClient struct {
-	cc *grpc.ClientConn
+	cc grpc.ClientConnInterface
 }
 
-func NewOrdersClient(cc *grpc.ClientConn) OrdersClient {
+func NewOrdersClient(cc grpc.ClientConnInterface) OrdersClient {
 	return &ordersClient{cc}
 }
 
@@ -1812,10 +2551,10 @@ type SwapsClient interface {
 }
 
 type swapsClient struct {
-	cc *grpc.ClientConn
+	cc grpc.ClientConnInterface
 }
 
-func NewSwapsClient(cc *grpc.ClientConn) SwapsClient {
+func NewSwapsClient(cc grpc.ClientConnInterface) SwapsClient {
 	return &swapsClient{cc}
 }
 
@@ -1900,5 +2639,185 @@ var _Swaps_serviceDesc = grpc.ServiceDesc{
 			ServerStreams: true,
 		},
 	},
+	Metadata: "lssdrpc.proto",
+}
+
+// RentingClient is the client API for Renting service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
+type RentingClient interface {
+	GenerateRentChannelInvoice(ctx context.Context, in *GenerateInvoiceToRentChannelCommand, opts ...grpc.CallOption) (*GenerateInvoiceToRentChannelResponse, error)
+	RentChannel(ctx context.Context, in *RentChannelCommand, opts ...grpc.CallOption) (*RentChannelResponse, error)
+	GetChannelStatus(ctx context.Context, in *GetChannelStatusCommand, opts ...grpc.CallOption) (*GetChannelStatusResponse, error)
+	GetFeeToRentChannel(ctx context.Context, in *GetFeeToRentChannelCommand, opts ...grpc.CallOption) (*GetFeeToRentChannelResponse, error)
+}
+
+type rentingClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewRentingClient(cc grpc.ClientConnInterface) RentingClient {
+	return &rentingClient{cc}
+}
+
+func (c *rentingClient) GenerateRentChannelInvoice(ctx context.Context, in *GenerateInvoiceToRentChannelCommand, opts ...grpc.CallOption) (*GenerateInvoiceToRentChannelResponse, error) {
+	out := new(GenerateInvoiceToRentChannelResponse)
+	err := c.cc.Invoke(ctx, "/lssdrpc.renting/GenerateRentChannelInvoice", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *rentingClient) RentChannel(ctx context.Context, in *RentChannelCommand, opts ...grpc.CallOption) (*RentChannelResponse, error) {
+	out := new(RentChannelResponse)
+	err := c.cc.Invoke(ctx, "/lssdrpc.renting/RentChannel", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *rentingClient) GetChannelStatus(ctx context.Context, in *GetChannelStatusCommand, opts ...grpc.CallOption) (*GetChannelStatusResponse, error) {
+	out := new(GetChannelStatusResponse)
+	err := c.cc.Invoke(ctx, "/lssdrpc.renting/GetChannelStatus", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *rentingClient) GetFeeToRentChannel(ctx context.Context, in *GetFeeToRentChannelCommand, opts ...grpc.CallOption) (*GetFeeToRentChannelResponse, error) {
+	out := new(GetFeeToRentChannelResponse)
+	err := c.cc.Invoke(ctx, "/lssdrpc.renting/GetFeeToRentChannel", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// RentingServer is the server API for Renting service.
+type RentingServer interface {
+	GenerateRentChannelInvoice(context.Context, *GenerateInvoiceToRentChannelCommand) (*GenerateInvoiceToRentChannelResponse, error)
+	RentChannel(context.Context, *RentChannelCommand) (*RentChannelResponse, error)
+	GetChannelStatus(context.Context, *GetChannelStatusCommand) (*GetChannelStatusResponse, error)
+	GetFeeToRentChannel(context.Context, *GetFeeToRentChannelCommand) (*GetFeeToRentChannelResponse, error)
+}
+
+// UnimplementedRentingServer can be embedded to have forward compatible implementations.
+type UnimplementedRentingServer struct {
+}
+
+func (*UnimplementedRentingServer) GenerateRentChannelInvoice(ctx context.Context, req *GenerateInvoiceToRentChannelCommand) (*GenerateInvoiceToRentChannelResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GenerateRentChannelInvoice not implemented")
+}
+func (*UnimplementedRentingServer) RentChannel(ctx context.Context, req *RentChannelCommand) (*RentChannelResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RentChannel not implemented")
+}
+func (*UnimplementedRentingServer) GetChannelStatus(ctx context.Context, req *GetChannelStatusCommand) (*GetChannelStatusResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetChannelStatus not implemented")
+}
+func (*UnimplementedRentingServer) GetFeeToRentChannel(ctx context.Context, req *GetFeeToRentChannelCommand) (*GetFeeToRentChannelResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetFeeToRentChannel not implemented")
+}
+
+func RegisterRentingServer(s *grpc.Server, srv RentingServer) {
+	s.RegisterService(&_Renting_serviceDesc, srv)
+}
+
+func _Renting_GenerateRentChannelInvoice_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateInvoiceToRentChannelCommand)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RentingServer).GenerateRentChannelInvoice(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/lssdrpc.renting/GenerateRentChannelInvoice",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RentingServer).GenerateRentChannelInvoice(ctx, req.(*GenerateInvoiceToRentChannelCommand))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Renting_RentChannel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RentChannelCommand)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RentingServer).RentChannel(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/lssdrpc.renting/RentChannel",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RentingServer).RentChannel(ctx, req.(*RentChannelCommand))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Renting_GetChannelStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetChannelStatusCommand)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RentingServer).GetChannelStatus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/lssdrpc.renting/GetChannelStatus",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RentingServer).GetChannelStatus(ctx, req.(*GetChannelStatusCommand))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Renting_GetFeeToRentChannel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetFeeToRentChannelCommand)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RentingServer).GetFeeToRentChannel(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/lssdrpc.renting/GetFeeToRentChannel",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RentingServer).GetFeeToRentChannel(ctx, req.(*GetFeeToRentChannelCommand))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+var _Renting_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "lssdrpc.renting",
+	HandlerType: (*RentingServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "GenerateRentChannelInvoice",
+			Handler:    _Renting_GenerateRentChannelInvoice_Handler,
+		},
+		{
+			MethodName: "RentChannel",
+			Handler:    _Renting_RentChannel_Handler,
+		},
+		{
+			MethodName: "GetChannelStatus",
+			Handler:    _Renting_GetChannelStatus_Handler,
+		},
+		{
+			MethodName: "GetFeeToRentChannel",
+			Handler:    _Renting_GetFeeToRentChannel_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
 	Metadata: "lssdrpc.proto",
 }
