@@ -89,8 +89,13 @@ service orders {
   // Cancels an existing order.
   rpc CancelOrder (CancelOrderRequest) returns (CancelOrderResponse);
 
-  // Susbcribe to events related to the orders in the orderbook.
+  // Subscribe to events related to the orders in the orderbook.
+  // Order added, removed will be delivered via this stream.
   rpc SubscribeOrders (SubscribeOrdersRequest) returns (stream OrderUpdate);
+
+  // Subscribe to events related to the own oroders in the orderbook.
+  // Order added, changed, removed will be delivered via this stream.
+  rpc SubscribeOwnOrders (SubscribeOrdersRequest) returns (stream OwnOrderUpdate);
 
   // List the available order on the orderbook.
   rpc ListOrders (ListOrdersRequest) returns (ListOrdersResponse);
@@ -153,8 +158,17 @@ message OrderUpdate {
     Order orderAdded = 1;
     // An order that was removed from the orderbook.
     Order orderRemoval = 2;
-    // An order that was changed in orderbook.
-    Order orderChanged = 3;
+  }
+}
+
+message OwnOrderUpdate {
+  oneof update {
+    // An own order that was posted.
+    Order orderAdded = 1;
+    // An own order that was changed in orderbook.
+    Order orderChanged = 2;
+    // An id of own order that was fully completed.
+    string orderCompleted = 3;
   }
 }
 
