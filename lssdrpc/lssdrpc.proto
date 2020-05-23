@@ -99,15 +99,25 @@ service orders {
 
   // List the available order on the orderbook.
   rpc ListOrders (ListOrdersRequest) returns (ListOrdersResponse);
+
+  rpc ListOwnOrders (ListOwnOrdersRequest) returns (ListOwnOrdersResponse);
 }
 
 message ListOrdersRequest {
   string pairId = 1;
-  bool includeOwnOrders = 2;
-  uint32 skip = 3;
-  uint32 limit = 4;
+  int64 lastKnownPrice = 2;
+  uint32 limit = 3;
 }
+
 message ListOrdersResponse {
+  repeated OrderSummary orders = 1;
+}
+
+message ListOwnOrdersRequest {
+  string pairId = 1;
+}
+
+message ListOwnOrdersResponse {
   repeated Order orders = 1;
 }
 
@@ -155,9 +165,9 @@ message SubscribeOrdersRequest {}
 message OrderUpdate {
   oneof update {
     // An order that was added to the orderbook.
-    Order orderAdded = 1;
+    OrderSummary orderAdded = 1;
     // An order that was removed from the orderbook.
-    Order orderRemoval = 2;
+    OrderSummary orderRemoval = 2;
   }
 }
 
@@ -170,6 +180,13 @@ message OwnOrderUpdate {
     // An id of own order that was fully completed.
     string orderCompleted = 3;
   }
+}
+
+message OrderSummary {
+  string pairId = 1;
+  BigInteger price = 2;
+  // The funds of the order in satoshis.
+  BigInteger funds = 3;
 }
 
 message Order {
