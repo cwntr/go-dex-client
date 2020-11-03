@@ -8,7 +8,7 @@ VM requirements:
 | ------------- | ------------- |
 | 4x vCPUs  | 8x vCPUs |
 | 8 GB of RAM | 16 GB of RAM  |
-| 500 GB HDD | 600+ GB HDD |
+| 150 GB HDD | 600+ GB HDD |
  
 to get the components (fully synchronized BTC, LTC and XSN chains and 3x Lightning Network Daemon) running.
 
