@@ -67,7 +67,7 @@ Copy
 
 `lnd_xsn.service`
  
- files from [infratructure](../installation_guide/etc/systemd/system) to your `/etc/systemd/system` directory on your server
+ files from [infrastructure](../installation_guide/etc/systemd/system) to your `/etc/systemd/system` directory on your server
  
 ## Control daemons via systemd
  
