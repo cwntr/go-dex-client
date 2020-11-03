@@ -1,0 +1,12 @@
+[Unit]
+Description=lnd_xsn service
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=1
+User=root
+ExecStart=/usr/bin/env /root/lnds/lnd_xsn --lnddir=/root/.lnd_xsn
+WorkingDirectory=/root/.lnd_xsn
+[Install]
+WantedBy=multi-user.target
