@@ -1,5 +1,7 @@
 # Guide #5 - Setup Lightning channels
 
+[< back to Guide 4 - LSSD](guide_4_lssd.md)
+
 Now we do have 3x LN Nodes (BTC, LTC, XSN) but none of them is able to do any payment yet. We need to make channels to the hub manually and the hub operator will also then need to make channels back to you.
 
 ## Basic flow
@@ -56,7 +58,8 @@ you can check the status / progress of your recent open channel with
 
 #### 4) tell the hub operator you channel capacity and with the channel id that he can match it and open back a channel
 
-Just provide information like channel-id and capacity you used for opening that channel, you will get a channel back with same capacity.
+Join us on [Discord](https://discord.gg/cyF5yCA) and get in contact with the Stakenet team. 
+You just need to provide information like channel-id and capacity you used for opening that channel, you will get a channel back with same capacity.
 You need to wait until the Hub opens back a channel to you, to perform actual swaps.
 
 #### 5) check that you have at least 2 channels to hub (one with local amount, one with equal amount of remote amount)
@@ -70,6 +73,7 @@ If you got the ok that it was opened back to you, just regularly check with `lis
 
 Just follow the same steps as for XSN also for BTC and LTC. Please consider that for BTC there will be a longer period to get the all the minimum confirmations for your channel funding transaction. Especially with lower amounts this may take several hours.
 
+[ > to next section (Guide 6 - Dex Clients)](guide_6_dex_clients.md)
 
 
 

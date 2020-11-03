@@ -1,5 +1,7 @@
 # Guide #2 - Core blockchains install + running
 
+[< back to Guide 1 - prerequisites](guide_1_prerequisites.md)
+
 ### Download and install coin backend's
 
 Download all to a common folder e.g. `"~/coins"`
@@ -155,5 +157,7 @@ Also "automatic_pruning": true and "pruneheight:" has a value which is several t
 
 
 If all of that is also reflected on your server, go ahead to next step, if not maybe check the Troubleshooting section.
+
+[ > to next section (Guide 3 - Lightning Daemons)](guide_3_lightning_daemons.md)
 
 

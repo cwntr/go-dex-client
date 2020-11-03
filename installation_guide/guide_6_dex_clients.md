@@ -1,5 +1,7 @@
 # Guide #6 - Dex Clients
 
+[< back to Guide 5 - Lightning Channels](guide_5_lightning_channels.md)
+
 Congratulations, you just setup all mandatory things to get to work with the Stakenet DexAPI. 
 What next is to run a client that implements this API.
 You could:
@@ -24,3 +26,4 @@ For example with this alias and color the Lightning Node will look like that:
 
 ![alt text](node_alias.JPG)
 
+All set? Check out the current active orders and feel free to participate: [DEX Orderbook](https://orderbook.stakenet.io/XSN_BTC)

@@ -1,5 +1,6 @@
 # Guide #3 - LNDs Installation + Running
 
+[< back to Guide 2 - Core Chains](guide_2_core_chains.md)
 
 ## Download
 
@@ -205,3 +206,5 @@ And also just double checking that all is still in `active`
 `systemctl status lnd_xsn`
 
 Now continue to next guide section. If something is off, try restarting + unlocking the LNDs and also make sure your core wallets are running properly.
+
+[ > to next section (Guide 4 - LSSD)](guide_4_lssd.md)

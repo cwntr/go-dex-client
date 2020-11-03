@@ -1,5 +1,7 @@
 # Guide #1 -  Prerequisites
 
+[< back to overview](README.md)
+
 Important before you start:
 - make sure your server os `Ubuntu 18.04+`, otherwise the `lssd` wont be running.
 - this guide is written in a perspective as `root` user, if you want to have a different setup please consider to manually adapt the paths from the provided examples.
@@ -39,3 +41,4 @@ Important before you start:
 
 `chmod +x lncli`
 
+[ > to next section (Guide 2 - Core Chains)](guide_2_core_chains.md)

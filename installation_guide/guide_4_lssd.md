@@ -1,5 +1,7 @@
 # Guide #4 - LSSD Install + Run
 
+[< back to Guide 3 - Lightning Daemons](guide_3_lightning_daemons.md)
+
 LSSD will require active LND interaction so make sure you have all the previous guide steps completed, otherwise nothing will work.
 
 
@@ -50,4 +52,5 @@ Some errors while starting the `lssd`? Stop everything and manually start to che
 
 and observe what is happening here.
 
+[ > to next section (Guide 5 - Lightning Channels)](guide_5_lightning_channels.md)
  
