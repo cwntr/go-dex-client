@@ -7,11 +7,17 @@ Important before you start:
 - this guide is written in a perspective as `root` user, if you want to have a different setup please consider to manually adapt the paths from the provided examples.
 - the files provided are organized how it would be on located on your server (given default settings as root)
 
-### 0.) update apt-get: `sudo apt-get update`
+### 0.) update apt-get:
+ 
+`sudo apt-get update`
 
-### 1.) install zmq: `sudo apt-get install libzmq3-dev`
+### 1.) install zmq: 
 
-### 2.) install unzip: `sudo apt-get install unzip`
+`sudo apt-get install libzmq3-dev`
+
+### 2.) install unzip: 
+
+`sudo apt-get install unzip`
 
 ### 3.) folder structure
 
