@@ -71,19 +71,19 @@ Copy
  
 ## Control daemons via systemd
  
-####Starting & Stopping LND BTC
+#### Starting & Stopping LND BTC
 
 `systemctl start lnd_btc`
 
 `systemctl stop lnd_btc`  
 
-####Starting & Stopping LND LTC
+#### Starting & Stopping LND LTC
 
 `systemctl start lnd_ltc`
 
 `systemctl stop lnd_ltc`  
 
-####Starting & Stopping LND XSN:
+#### Starting & Stopping LND XSN:
 
 `systemctl start lnd_xsn`
 
