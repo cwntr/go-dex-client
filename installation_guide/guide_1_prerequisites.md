@@ -35,8 +35,6 @@ Important before you start:
 
 `mv lnd-linux-amd64-v0.11.1-beta.rc3/lncli lncli`
 
-`mv lnd-linux-amd64-v0.11.1-beta.rc3/lnd lnd`
-
 `rm -r lnd-linux-amd64-v0.11.1-beta.rc3/`
 
 `chmod +x lncli`
