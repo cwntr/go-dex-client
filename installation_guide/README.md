@@ -12,7 +12,8 @@ VM requirements:
  
 to get the components (fully synchronized BTC, LTC and XSN chains and 3x Lightning Network Daemon) running.
 
-**Start the guide**
+**Start the Installation**
+
 Log on to your Ubuntu VM and **[get started](guide_1_prerequisites.md)** with the installation guide split into 6 parts.
 
 ### Components Overview
