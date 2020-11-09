@@ -27,3 +27,12 @@ For example with this alias and color the Lightning Node will look like that:
 ![alt text](node_alias.JPG)
 
 All set? Check out the current active orders and feel free to participate: [DEX Orderbook](https://orderbook.stakenet.io/XSN_BTC)
+
+
+---
+
+If you find this page any useful, feel free to spare some coin:
+
+**XSN:** XfiBSgdNJSVWsfZzKFa1HrcU8WgFCCUXGn
+
+**ETH:** 0x28260E316Fa2491Af0005b7dF0085073B844B97b
